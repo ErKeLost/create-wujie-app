@@ -1,0 +1,58 @@
+{
+  "name": "wujie-cli",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "zx ./scripts/build.mjs",
+    "build:cli": "pnpm build --filter wujie-cli",
+    "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
+    "version-packages": "changeset version",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "lint:fix": "eslint --fix --ext .js .",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier": "prettier --write .",
+    "clean": "rimraf node_modules **/*/node_modules",
+    "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}",
+    "eslint": "eslint . --ext .ts,.vue,.js,.tsx",
+    "prepare": "husky install",
+    "commit": "git add . && cz"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.23.0",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "commitizen": "^4.2.4",
+    "commitlint": "^17.0.3",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.6.0",
+    "esbuild": "^0.14.53",
+    "esbuild-plugin-license": "^1.2.2",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "pnpm": "7.3.0",
+    "prettier": "latest",
+    "rimraf": "^3.0.2",
+    "turbo": "latest",
+    "typescript": "^4.7.4",
+    "zx": "^7.0.8"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.2.1",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}

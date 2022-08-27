@@ -1,0 +1,34 @@
+{
+  "name": "create-wujie-app",
+  "version": "0.0.8",
+  "description": "",
+  "bin": {
+    "wujie": "outfile.cjs"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/ErKeLost/vite-cli#readme",
+  "repository": "https://github.com/ErKeLost/vite-cli",
+  "bugs": "https://github.com/ErKeLost/vite-cli/issues",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "commander": "^9.3.0",
+    "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.1",
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "outfile.cjs",
+    "template"
+  ]
+}
