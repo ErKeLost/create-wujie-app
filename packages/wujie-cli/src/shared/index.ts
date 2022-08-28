@@ -4,9 +4,9 @@ import fs = require('fs-extra')
 import clearConsole from '@/utils/clearConsole'
 import options from '@/shared/options'
 import minimist from 'minimist'
-import PackageDevice from '@/core/questions/creator/packageManager'
-import projectName from '@/core/questions/creator/projectName'
-import createQuestion from '@/core/questions/creator'
+import PackageDevice from '@/questions/packageManager'
+import projectName from '@/questions/projectName'
+import createQuestion from '@/questions'
 import prompts from 'prompts'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const gradient = require('gradient-string')
@@ -16,7 +16,7 @@ let startTime: number, endTime: number
 export default async function () {
   clearConsole()
   console.log(
-    gradient('cyan', '#5e7ce0')('\n📦 Welcome To Create Template for WuJie! \n')
+    gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n')
   )
 
   await createProjectQuestions()

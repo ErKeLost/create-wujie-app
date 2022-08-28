@@ -1,7 +1,5 @@
-// import { prompt, QuestionCollection } from 'inquirer'
 import options from '@/shared/options'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const prompts = require('prompts')
+
 async function createQuestion(util, question) {
   const result = await util(question, {
     onCancel: () => {
