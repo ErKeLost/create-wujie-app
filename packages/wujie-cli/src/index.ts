@@ -12,11 +12,15 @@ import minimist from 'minimist'
 import gradient from 'gradient-string'
 import path from 'node:path'
 import fs from 'fs-extra'
+
+const cwd = process.cwd()
+let startTime: number, endTime: number
+
 // format file name
 function formatTargetDir(targetDir) {
   return targetDir?.trim().replace(/\/+$/g, '')
 }
-const cwd = process.cwd()
+
 // create Project fn
 async function createProjectQuestions(): Promise<void> {
   const argv = minimist(process.argv.slice(2), { string: ['_'] })
@@ -39,13 +43,9 @@ async function createProjectQuestions(): Promise<void> {
     process.exit(1)
   }
 }
-let startTime: number, endTime: number
-async function createWuJieProject() {
-  clearConsole()
-  console.log(
-    gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n')
-  )
-  await createProjectQuestions()
+
+// install deps
+async function install() {
   options.dest = path.resolve(cwd, options.name)
   // 目录
   const dest = path.resolve(process.cwd(), options.name)
@@ -82,6 +82,16 @@ async function createWuJieProject() {
       ? `✨✨ ${options.package} run dev`
       : `✨✨ ${options.package} dev`
   )
+}
+
+// create project
+async function createWuJieProject() {
+  clearConsole()
+  console.log(
+    gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n')
+  )
+  await createProjectQuestions()
+  await install()
 }
 
 createWuJieProject()
