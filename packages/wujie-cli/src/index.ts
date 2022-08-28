@@ -47,6 +47,8 @@ async function createProjectQuestions(): Promise<void> {
 // install deps
 async function install() {
   options.dest = path.resolve(cwd, options.name)
+  console.log(options)
+
   // 目录
   const dest = path.resolve(process.cwd(), options.name)
   const cmdIgnore = createSpawnCmd(dest, 'ignore')
@@ -56,6 +58,8 @@ async function install() {
 
   // 开始记录用时
   startTime = new Date().getTime()
+  console.log(templatePath, dest)
+
   // 拷贝基础模板文件
   await fs.copy(templatePath, dest)
   // 编译 ejs 模板文件
