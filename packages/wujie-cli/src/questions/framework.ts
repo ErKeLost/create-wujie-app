@@ -22,7 +22,7 @@ export default [
     instructions: false,
     choices: [
       {
-        title: 'Vite',
+        title: 'Vite + keep-alive',
         value: 'vite'
       },
       {
