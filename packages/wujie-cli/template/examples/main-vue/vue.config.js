@@ -10,4 +10,10 @@ module.exports = defineConfig({
     config.resolve.alias.set("@$", resolve("src"));
   },
   lintOnSave: false,
+  devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    open: true,
+  },
 });
