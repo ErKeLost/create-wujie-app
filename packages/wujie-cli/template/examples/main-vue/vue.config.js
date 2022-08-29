@@ -15,6 +15,7 @@ module.exports = defineConfig({
       "Access-Control-Allow-Origin": "*",
     },
     host: "localhost",
+    port: "8080",
     open: true,
   },
 });
