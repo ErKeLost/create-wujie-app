@@ -8,4 +8,5 @@ module.exports = defineConfig({
     },
     port: "8082",
   },
+  lintOnSave: false
 });

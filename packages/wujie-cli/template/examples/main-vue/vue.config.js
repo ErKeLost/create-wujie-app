@@ -9,4 +9,5 @@ module.exports = defineConfig({
   chainWebpack: (config) => {
     config.resolve.alias.set("@$", resolve("src"));
   },
+  lintOnSave: false,
 });
