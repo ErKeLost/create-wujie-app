@@ -15,7 +15,11 @@
         <el-tag style="vertical-align: text-top" size="small">2.2.8</el-tag>
       </p>
       <p>
-        <el-button @click="() => open('https://github.com/Tencent/wujie/tree/master/examples/vue3')"
+        <el-button
+          @click="
+            () =>
+              open('https://github.com/Tencent/wujie/tree/master/examples/vue3')
+          "
           >仓库地址</el-button
         >
       </p>

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Vue logo" src="https://cn.vitejs.dev/logo-with-shadow.png" />
     <h2 class="vue-title">{{ msg }}</h2>
   </div>
 </template>

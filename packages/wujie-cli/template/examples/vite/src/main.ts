@@ -21,7 +21,7 @@ import "ant-design-vue/es/button/style/index.css";
 import "ant-design-vue/es/select/style/index.css";
 import "ant-design-vue/es/modal/style/index.css";
 import "ant-design-vue/es/popover/style/index.css";
-import "./index.css";
+import "./style.css";
 
 const basename = process.env.NODE_ENV === "production" ? "/demo-vite/" : "";
 declare global {
@@ -40,7 +40,10 @@ declare global {
 if (window.__POWERED_BY_WUJIE__) {
   let instance: any;
   window.__WUJIE_MOUNT = () => {
-    const router = createRouter({ history: createWebHistory(basename), routes });
+    const router = createRouter({
+      history: createWebHistory(basename),
+      routes,
+    });
     instance = createApp(App)
       .use(Tag)
       .use(Button)

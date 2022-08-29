@@ -7,7 +7,9 @@
       <el-button @click="count -= 1">-</el-button>
       <span class="number">{{ count }}</span>
       <el-button @click="count += 1">+</el-button>
-      <el-button style="margin-left: 20px" @click="handleClick">跳转react17</el-button>
+      <el-button style="margin-left: 20px" @click="handleClick"
+        >跳转react17</el-button
+      >
     </p>
   </div>
 </template>

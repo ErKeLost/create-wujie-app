@@ -29,7 +29,9 @@ import "./index.css";
 
 const base = process.env.NODE_ENV === "production" ? "/demo-vue2/" : "";
 
-[Tag, Button, Select, Option, Popover, Dialog].forEach((element) => Vue.use(element));
+[Tag, Button, Select, Option, Popover, Dialog].forEach((element) =>
+  Vue.use(element)
+);
 [AButton, ASelect, AModal, APopover].forEach((element) => Vue.use(element));
 
 Vue.use(VueRouter);
@@ -46,5 +48,8 @@ if (window.__POWERED_BY_WUJIE__) {
     instance.$destroy();
   };
 } else {
-  new Vue({ router: new VueRouter({ base, routes }), render: (h) => h(App) }).$mount("#app");
+  new Vue({
+    router: new VueRouter({ base, routes }),
+    render: (h) => h(App),
+  }).$mount("#app");
 }

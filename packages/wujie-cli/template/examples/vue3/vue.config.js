@@ -1,14 +1,11 @@
-// vue.config.js
-
-/**
- * @type {import('@vue/cli-service').ProjectOptions}
- */
-module.exports = {
+const { defineConfig } = require("@vue/cli-service");
+module.exports = defineConfig({
+  transpileDependencies: true,
   publicPath: "./",
   devServer: {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
-    port: "7300",
+    port: "8082",
   },
-};
+});

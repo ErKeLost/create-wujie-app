@@ -5,7 +5,11 @@
       <!-- react16相关路由 -->
       <router-link to="/react16">
         react16
-        <a-icon :class="['main-icon', { active: react16Flag }]" type="caret-up" @click.native="handleFlag('react16')" />
+        <!-- <a-icon
+          :class="['main-icon', { active: react16Flag }]"
+          type="caret-up"
+          @click.native="handleFlag('react16')"
+        /> -->
       </router-link>
       <div class="sub-menu" v-show="react16Flag">
         <router-link to="/react16-sub/home">home</router-link>
@@ -19,7 +23,11 @@
       <router-link to="/react17">
         react17
         <span class="alive">保活</span>
-        <a-icon :class="['main-icon', { active: react17Flag }]" type="caret-up" @click.native="handleFlag('react17')" />
+        <!-- <a-icon
+          :class="['main-icon', { active: react17Flag }]"
+          type="caret-up"
+          @click.native="handleFlag('react17')"
+        /> -->
       </router-link>
       <div class="sub-menu" v-show="react17Flag">
         <router-link to="/react17-sub/home">home</router-link>
@@ -31,7 +39,11 @@
       <!-- vue2相关路由 -->
       <router-link to="/vue2">
         vue2
-        <a-icon :class="['main-icon', { active: vue2Flag }]" type="caret-up" @click.native="handleFlag('vue2')" />
+        <!-- <a-icon
+          :class="['main-icon', { active: vue2Flag }]"
+          type="caret-up"
+          @click.native="handleFlag('vue2')"
+        /> -->
       </router-link>
       <div class="sub-menu" v-show="vue2Flag">
         <router-link to="/vue2-sub/home">home</router-link>
@@ -43,7 +55,11 @@
       <router-link to="/vue3">
         vue3
         <span class="alive">保活</span>
-        <a-icon :class="['main-icon', { active: vue3Flag }]" type="caret-up" @click.native="handleFlag('vue3')" />
+        <!-- <a-icon
+          :class="['main-icon', { active: vue3Flag }]"
+          type="caret-up"
+          @click.native="handleFlag('vue3')"
+        /> -->
       </router-link>
       <div class="sub-menu" v-show="vue3Flag">
         <router-link to="/vue3-sub/home">home</router-link>
@@ -53,8 +69,13 @@
         <router-link to="/vue3-sub/state">state</router-link>
       </div>
       <router-link to="/vite"
-        >vite <a-icon :class="['main-icon', { active: viteFlag }]" type="caret-up" @click.native="handleFlag('vite')"
-      /></router-link>
+        >vite
+        <!-- <a-icon
+          :class="['main-icon', { active: viteFlag }]"
+          type="caret-up"
+          @click.native="handleFlag('vite')"
+        /> -->
+      </router-link>
       <div class="sub-menu" v-show="viteFlag">
         <router-link to="/vite-sub/home">home</router-link>
         <router-link to="/vite-sub/dialog">dialog</router-link>
@@ -63,7 +84,13 @@
       </div>
       <router-link to="/angular12">angular12</router-link>
       <router-link to="/all">all</router-link>
-      <a-button class="menu-icon" type="primary" icon="unordered-list" size="large" @click.stop="active = !active" />
+      <!-- <a-button
+        class="menu-icon"
+        type="primary"
+        icon="unordered-list"
+        size="large"
+        @click.stop="active = !active"
+      /> -->
     </div>
     <div class="content" @click="active = false">
       <!-- 必须添加key否则路由共用组件不会渲染 -->
@@ -187,10 +214,11 @@ h3 {
 }
 
 .content {
-  flex: 1;
+  margin: 0 auto;
+  /* flex: 1;
   height: 100vh;
   overflow: hidden scroll;
-  width: 1px;
+  width: 1px; */
 }
 
 #nav a {
