@@ -86,8 +86,7 @@ Vue.use(WujieVue);
 
 - 使用
 
-```js
-
+```html
 <WujieVue
   width="100%"
   height="100%"
@@ -102,7 +101,6 @@ Vue.use(WujieVue);
   :beforeUnmount="beforeUnmount"
   :afterUnmount="afterUnmount"
 ></WujieVue>
-
 ```
 
 ### react 框架

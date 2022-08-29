@@ -4,15 +4,15 @@ cd $(dirname $0)/..
 
 set -eo pipefail
 
-cd ./docs
+cd ./packages/wujie-doc
 
 npm run docs:build
 
-cd ../
+cd ../../
 
 rm -rf ../doc/*
 
-mv ./docs/.vitepress/dist/* ../doc/
+mv packages/wujie-doc/docs/.vuepress/dist/* ../doc/
 cp ../doc/index.html ../doc/404.html
 cd ../doc
 git add .

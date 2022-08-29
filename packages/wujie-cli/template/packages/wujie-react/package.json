@@ -1,6 +1,6 @@
 {
   "name": "wujie-react",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.11",
   "description": "无界微前端React组件封装",
   "main": "./lib/index.js",
   "module": "./esm/index.js",
@@ -14,6 +14,7 @@
     "esm": "cross-env BABEL_ENV=esm babel index.js --out-dir ./esm --source-maps",
     "prepack": "bash build.sh",
     "start": "cross-env BABEL_ENV=esm babel index.js --out-dir ./esm --source-maps inline --watch",
+    "build": "cross-env BABEL_ENV=esm babel index.js --out-dir ./esm --source-maps inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
@@ -30,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.8.1",
-    "wujie": "^1.0.0-rc.12"
+    "wujie": "workspace:*"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.6",
