@@ -12,4 +12,7 @@ const templateFilesMap = [
   '.eslintrc.js',
   'index.html'
 ]
-export { templateFilesMap }
+
+const mainFramework = ['main-vue', 'main-react']
+const subFramework = ['vue2', 'vue3', 'vite', 'angular', 'react16', 'react17']
+export { templateFilesMap, mainFramework, subFramework }

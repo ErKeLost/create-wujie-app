@@ -4,7 +4,11 @@ import clearConsole from '@/utils/clearConsole'
 import createSpawnCmd from '@/utils/createSpawnCmd'
 import { ejsRender } from '@/utils/ejsRender'
 import options from '@/shared/options'
-import { templateFilesMap } from '@/shared/templateFile'
+import {
+  templateFilesMap,
+  mainFramework,
+  subFramework
+} from '@/shared/templateFile'
 import PackageDevice from '@/questions/packageManager'
 import projectName from '@/questions/projectName'
 import framework from '@/questions/framework'
@@ -17,6 +21,7 @@ import fs from 'fs-extra'
 
 const cwd = process.cwd()
 let startTime: number, endTime: number
+// 格式化 framework
 
 // format file name
 function formatTargetDir(targetDir) {
@@ -54,7 +59,9 @@ async function install() {
   // 开始记录用时
   startTime = new Date().getTime()
 
-  yellow(`> The project template is generated in the directory: ${dest}`)
+  yellow(
+    `> The project template is generated in the directory: ${options.dest}`
+  )
   // Git 初始化
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
@@ -65,6 +72,7 @@ async function install() {
   console.log(`> Automatically installing dependencies...`)
   console.log('')
   await cmdInherit(options.package, ['install'])
+  clearConsole()
   endTime = new Date().getTime()
   const usageTime = (endTime - startTime) / 1000
   cyan(
@@ -78,18 +86,29 @@ async function install() {
       : `✨✨ ${options.package} dev`
   )
 }
-
 async function renderTemplate() {
   // 模板路径
   const templatePath = path.resolve(__dirname, `template`)
   // 目录
-  const dest = path.resolve(process.cwd(), options.name)
   options.dest = path.resolve(cwd, options.name)
-  console.log(options)
-  console.log(templatePath, dest)
 
   // 拷贝基础模板文件
-  await fs.copy(templatePath, dest)
+  const index = mainFramework.indexOf(options.mainFramework)
+  mainFramework.splice(index, 1)
+  await fs.copy(templatePath, options.dest)
+  mainFramework.forEach(async (item) => {
+    await fs.remove(`${options.dest}/examples/${item}`)
+  })
+  const obj = {}
+  options.subFramework.forEach((item) => (obj[`${item}`] = true)) // 将需要对比的数组的值作为 obj的key
+  const subItems = subFramework.map((item) => {
+    if (!obj[item]) {
+      return item
+    }
+  }) // 这里是对比出来不同的元素
+  subItems.forEach(async (item) => {
+    await fs.remove(`${options.dest}/examples/${item}`)
+  })
 
   // 编译 ejs 模板文件
   // await Promise.all(
