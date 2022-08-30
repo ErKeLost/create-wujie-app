@@ -1,31 +1,9 @@
 interface Options {
-  Router?: string
-  Pinia?: string
-  Eslint?: string
-  Prettier?: string
   name?: string
-  version?: string
-  src?: string
-  dest?: string
-  components?: string
-  pluginType?: 'component' | 'hook' | 'directive'
-  plugins?: string[]
-  allPackages?: any[]
-  precss?: 'less' | 'scss' | ''
+  projectName?: string
   package?: 'pnpm' | 'npm' | 'yarn'
-  ui?: any
-  useEslint?: boolean
-  usePrettier?: boolean
-  useRouter?: boolean
-  usePinia?: boolean
-  EslintScript?: string
-  PrettierScript?: string
-  EslintWithPrettierScript?: string
-  pluginList?: string
-  frame?: string
-  pluginImportStatement?: string
-  // vue-components-import
-  ComponentResolver?: string
+  mainFramework?: string
+  subFramework?: string[]
 }
 
 const options: Options = {}

@@ -92,10 +92,10 @@ async function renderTemplate() {
   // 目录
   options.dest = path.resolve(cwd, options.name)
 
+  await fs.copy(templatePath, options.dest)
   // 拷贝基础模板文件
   const index = mainFramework.indexOf(options.mainFramework)
   mainFramework.splice(index, 1)
-  await fs.copy(templatePath, options.dest)
   mainFramework.forEach(async (item) => {
     await fs.remove(`${options.dest}/examples/${item}`)
   })
@@ -125,7 +125,7 @@ async function createWuJieProject() {
   )
   await createProjectQuestions()
   await renderTemplate()
-  // await install()
+  await install()
 }
 
 createWuJieProject()
