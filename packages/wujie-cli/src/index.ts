@@ -2,7 +2,9 @@
 import { cyan, yellow } from '@/utils/log'
 import clearConsole from '@/utils/clearConsole'
 import createSpawnCmd from '@/utils/createSpawnCmd'
+import { ejsRender } from '@/utils/ejsRender'
 import options from '@/shared/options'
+import { templateFilesMap } from '@/shared/templateFile'
 import PackageDevice from '@/questions/packageManager'
 import projectName from '@/questions/projectName'
 import framework from '@/questions/framework'
@@ -46,23 +48,12 @@ async function createProjectQuestions(): Promise<void> {
 
 // install deps
 async function install() {
-  options.dest = path.resolve(cwd, options.name)
-  console.log(options)
-
-  // 目录
-  const dest = path.resolve(process.cwd(), options.name)
-  const cmdIgnore = createSpawnCmd(dest, 'ignore')
-  const cmdInherit = createSpawnCmd(dest, 'inherit')
-  // 模板路径
-  const templatePath = path.resolve(__dirname, `template`)
+  const cmdIgnore = createSpawnCmd(options.dest, 'ignore')
+  const cmdInherit = createSpawnCmd(options.dest, 'inherit')
 
   // 开始记录用时
   startTime = new Date().getTime()
-  console.log(templatePath, dest)
 
-  // 拷贝基础模板文件
-  await fs.copy(templatePath, dest)
-  // 编译 ejs 模板文件
   yellow(`> The project template is generated in the directory: ${dest}`)
   // Git 初始化
   await cmdIgnore('git', ['init'])
@@ -88,6 +79,25 @@ async function install() {
   )
 }
 
+async function renderTemplate() {
+  // 模板路径
+  const templatePath = path.resolve(__dirname, `template`)
+  // 目录
+  const dest = path.resolve(process.cwd(), options.name)
+  options.dest = path.resolve(cwd, options.name)
+  console.log(options)
+  console.log(templatePath, dest)
+
+  // 拷贝基础模板文件
+  await fs.copy(templatePath, dest)
+
+  // 编译 ejs 模板文件
+  // await Promise.all(
+  //   templateFilesMap
+  //     .map((file) => ejsRender(file, options.name))
+  // )
+}
+
 // create project
 async function createWuJieProject() {
   clearConsole()
@@ -95,7 +105,8 @@ async function createWuJieProject() {
     gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n')
   )
   await createProjectQuestions()
-  await install()
+  await renderTemplate()
+  // await install()
 }
 
 createWuJieProject()
