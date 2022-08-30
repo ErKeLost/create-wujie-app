@@ -1,8 +1,3 @@
-// vue.config.js
-
-/**
- * @type {import('@vue/cli-service').ProjectOptions}
- */
 module.exports = {
   publicPath: "./",
   devServer: {
@@ -11,5 +6,4 @@ module.exports = {
     },
     port: "8082",
   },
-  lintOnSave: false,
 };
