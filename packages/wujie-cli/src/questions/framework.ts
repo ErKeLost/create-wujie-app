@@ -7,8 +7,16 @@ export default [
     instructions: false,
     choices: [
       {
-        title: 'Vue',
-        value: 'main-vue'
+        title: 'Webpack + Vue2',
+        value: 'main-vue2'
+      },
+      {
+        title: 'Webpack + Vue2',
+        value: 'main-vue3'
+      },
+      {
+        title: 'Vite + Vue3',
+        value: 'main-vite-vue'
       },
       {
         title: 'React',
