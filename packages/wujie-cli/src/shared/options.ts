@@ -4,6 +4,7 @@ interface Options {
   package?: 'pnpm' | 'npm' | 'yarn'
   mainFramework?: string
   subFramework?: string[]
+  dist?: string
 }
 
 const options: Options = {}

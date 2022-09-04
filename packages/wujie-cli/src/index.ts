@@ -44,7 +44,6 @@ async function createProjectQuestions(): Promise<void> {
     // framework
     await createQuestion(prompts, framework)
     // cancel
-    console.log(options)
   } catch (cancelled) {
     console.log(cancelled.message)
     process.exit(1)
@@ -94,9 +93,16 @@ async function renderTemplate() {
 
   await fs.copy(templatePath, options.dest)
   // 拷贝基础模板文件
+
+  console.log(mainFramework)
+
   const index = mainFramework.indexOf(options.mainFramework)
   mainFramework.splice(index, 1)
+  console.log(mainFramework)
+
   mainFramework.forEach(async (item) => {
+    console.log(item)
+
     await fs.remove(`${options.dest}/examples/${item}`)
   })
   const obj = {}
@@ -125,7 +131,7 @@ async function createWuJieProject() {
   )
   await createProjectQuestions()
   await renderTemplate()
-  await install()
+  // await install()
 }
 
 createWuJieProject()

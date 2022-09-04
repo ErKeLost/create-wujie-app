@@ -2,21 +2,17 @@ export default [
   {
     name: 'mainFramework',
     type: 'select',
+    instructions: false,
     message:
       'What framework do you choose as your main application (选择什么框架作为你的主应用)',
-    instructions: false,
     choices: [
       {
         title: 'Webpack + Vue2',
-        value: 'main-vue2'
-      },
-      {
-        title: 'Webpack + Vue2',
-        value: 'main-vue3'
+        value: 'main-vue'
       },
       {
         title: 'Vite + Vue3',
-        value: 'main-vite-vue'
+        value: 'main-vite'
       },
       {
         title: 'React',
