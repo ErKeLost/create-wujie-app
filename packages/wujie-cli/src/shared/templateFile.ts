@@ -14,5 +14,5 @@ const templateFilesMap = [
 ]
 
 const mainFramework = ['main-vue', 'main-react', 'main-vite']
-const subFramework = ['vue2', 'vue3', 'vite', 'angular', 'react16', 'react17']
+const subFramework = ['vue2', 'vue3', 'vite', 'angular12', 'react16', 'react17', 'react18']
 export { templateFilesMap, mainFramework, subFramework }
