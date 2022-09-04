@@ -131,7 +131,7 @@ async function createWuJieProject() {
   )
   await createProjectQuestions()
   await renderTemplate()
-  // await install()
+  await install()
 }
 
 createWuJieProject()

@@ -138,9 +138,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   display: flex;
+  flex: 1;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 100vw;
 }
 
 #nav {

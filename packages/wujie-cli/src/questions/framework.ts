@@ -15,7 +15,7 @@ export default [
         value: 'main-vite'
       },
       {
-        title: 'React',
+        title: 'Webpack + React17',
         value: 'main-react'
       }
     ]
@@ -49,9 +49,10 @@ export default [
       },
       {
         title: 'React18',
-        value: 'react18'
+        value: 'react18',
+        disabled: true
       },
-      { title: 'Angular', value: 'angular' }
+      { title: 'Angular12', value: 'angular12' }
     ]
   }
 ]
