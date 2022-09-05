@@ -7,9 +7,9 @@ export default function React16() {
   const navigation = useNavigate();
   const react16Url = hostMap("//localhost:7600/");
   const react17Url = hostMap("//localhost:7100/");
-  const vue2Url = hostMap("//localhost:7200/");
-  const vue3Url = hostMap("//localhost:7300/");
-  const vite = hostMap("//localhost:7500/");
+  const vue2Url = hostMap("//localhost:8081/");
+  const vue3Url = hostMap("//localhost:8082/");
+  const vite = hostMap("//localhost:8083/");
   const angular12Url = hostMap("//localhost:7400/");
   // 修正iframe的url，防止github pages csp报错
   const props = {

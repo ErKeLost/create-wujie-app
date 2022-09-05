@@ -7,7 +7,7 @@ export default function Vite() {
   const location = useLocation();
   const navigation = useNavigate();
   const path = location.pathname.replace("/vite-sub", "").replace("/vite", "").replace("/", ""); ////
-  const viteUrl = hostMap("//localhost:7500/") + path;
+  const viteUrl = hostMap("//localhost:8083/") + path;
   const props = {
     jump: (name) => {
       navigation(`/${name}`);

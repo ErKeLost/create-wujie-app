@@ -7,7 +7,7 @@ export default function Vue3() {
   const location = useLocation();
   const navigation = useNavigate();
   const path = location.pathname.replace("/vue3-sub", "").replace("/vue3", ""); ////
-  const vue3Url = hostMap("//localhost:7300/");
+  const vue3Url = hostMap("//localhost:8082/");
   // 告诉子应用要跳转哪个路由
   path && WujieReact.bus.$emit("vue3-router-change", path);
   const props = {

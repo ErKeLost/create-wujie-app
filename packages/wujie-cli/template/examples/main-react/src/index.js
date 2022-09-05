@@ -44,8 +44,8 @@ setupApp({
 
 setupApp({
   name: "vue2",
-  url: hostMap("//localhost:7200/"),
-  attrs: isProduction ? { src: hostMap("//localhost:7200/") } : {},
+  url: hostMap("//localhost:8001/"),
+  attrs: isProduction ? { src: hostMap("//localhost:8002/") } : {},
   exec: true,
   fetch: credentialsFetch,
   degrade,
@@ -54,14 +54,14 @@ setupApp({
 
 setupApp({
   name: "vue3",
-  url: hostMap("//localhost:7300/"),
-  attrs: isProduction ? { src: hostMap("//localhost:7300/") } : {},
+  url: hostMap("//localhost:8082/"),
+  attrs: isProduction ? { src: hostMap("//localhost:8082/") } : {},
   exec: true,
   alive: true,
   plugins: [{ cssExcludes: ["https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"] }],
   // 引入了的第三方样式不需要添加credentials
   fetch: (url, options) =>
-    url.includes(hostMap("//localhost:7300/")) ? credentialsFetch(url, options) : window.fetch(url, options),
+    url.includes(hostMap("//localhost:8082/")) ? credentialsFetch(url, options) : window.fetch(url, options),
   degrade,
   ...lifecycles
 });
@@ -78,8 +78,8 @@ setupApp({
 
 setupApp({
   name: "vite",
-  url: hostMap("//localhost:7500/"),
-  attrs: isProduction ? { src: hostMap("//localhost:7500/") } : {},
+  url: hostMap("//localhost:8083/"),
+  attrs: isProduction ? { src: hostMap("//localhost:8083/") } : {},
   exec: true,
   fetch: credentialsFetch,
   degrade,

@@ -7,7 +7,7 @@ export default function Vue2() {
   const location = useLocation();
   const navigation = useNavigate();
   const path = location.pathname.replace("/vue2-sub", "").replace("/vue2", ""); ////
-  const vue2Url = hostMap("//localhost:7200/") + "#" + path;
+  const vue2Url = hostMap("//localhost:8081/") + "#" + path;
   const props = {
     jump: (name) => {
       navigation(`/${name}`);
