@@ -19,13 +19,15 @@
     "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}",
     "eslint": "eslint . --ext .ts,.vue,.js,.tsx",
     "prepare": "husky install",
-    "commit": "git add . && cz"
+    "commit": "git add . && cz",
+    "release": "bumpp packages/*/package.json && pnpm publish -r"
   },
   "devDependencies": {
     "@changesets/cli": "^2.23.0",
     "@commitlint/config-conventional": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
+    "bumpp": "^8.2.1",
     "commitizen": "^4.2.4",
     "commitlint": "^17.0.3",
     "commitlint-config-cz": "^0.13.3",
