@@ -46,10 +46,10 @@
         /> -->
       </router-link>
       <div class="sub-menu" v-show="vue2Flag">
-        <router-link to="/vue2-sub/home">home</router-link>
-        <router-link to="/vue2-sub/dialog">dialog</router-link>
-        <router-link to="/vue2-sub/location">location</router-link>
-        <router-link to="/vue2-sub/communication">communication</router-link>
+        <router-link to="/vue2/home">home</router-link>
+        <router-link to="/vue2/dialog">dialog</router-link>
+        <router-link to="/vue2/location">location</router-link>
+        <router-link to="/vue2/communication">communication</router-link>
       </div>
       <!-- vue3相关路由 -->
       <router-link to="/vue3">

@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      dialog: null,
+      dialog: null
     };
   },
   methods: {
@@ -29,8 +29,8 @@ export default {
     handleRemove() {
       if (this.dialog) document.body.removeChild(this.dialog);
       this.dialog = null;
-    },
-  },
+    }
+  }
 };
 </script>
 

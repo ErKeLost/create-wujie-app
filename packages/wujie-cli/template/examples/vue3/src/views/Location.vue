@@ -27,12 +27,12 @@ const windowHost = window.location.host;
 export default {
   name: "About",
   components: {
-    HelloWorld,
+    HelloWorld
   },
   data() {
     return {
       host,
-      windowHost,
+      windowHost
     };
   },
   mounted() {
@@ -43,8 +43,8 @@ export default {
       if (window.__WUJIE?.degrade || !window.Proxy || !window.CustomElementRegistry) {
         window.$wujie.location.href = "https://wujicode.cn/xy/app/prod/official/home";
       } else window.location.href = "https://wujicode.cn/xy/app/prod/official/home";
-    },
-  },
+    }
+  }
 };
 </script>
 

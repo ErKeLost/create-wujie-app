@@ -28,12 +28,12 @@ import HelloWorld from "@/components/HelloWorld.vue";
 export default {
   data() {
     return {
-      open: window.open,
+      open: window.open
     };
   },
   components: {
-    HelloWorld,
-  },
+    HelloWorld
+  }
 };
 </script>
 
