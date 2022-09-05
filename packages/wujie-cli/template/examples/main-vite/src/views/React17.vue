@@ -9,9 +9,9 @@ import hostMap from "../wujie-config/hostMap";
 export default {
   data() {
     return {
-      react17Url: hostMap("//localhost:7100/")
+      react17Url: hostMap("//localhost:7100/"),
     };
-  }
+  },
 };
 </script>
 

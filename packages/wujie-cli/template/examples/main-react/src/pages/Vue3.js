@@ -13,7 +13,7 @@ export default function Vue3() {
   const props = {
     jump: (name) => {
       navigation(`/${name}`);
-    }
+    },
   };
   return <WujieReact width="100%" height="100%" name="vue3" url={vue3Url} sync={!path} props={props}></WujieReact>;
 }

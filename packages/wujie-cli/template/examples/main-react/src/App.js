@@ -19,7 +19,7 @@ const subMap = {
   react17: ["home", "dialog", "location", "communication", "state"],
   vue2: ["home", "dialog", "location", "communication"],
   vue3: ["home", "dialog", "location", "contact", "state"],
-  vite: ["home", "dialog", "location", "contact"]
+  vite: ["home", "dialog", "location", "contact"],
 };
 
 function Nav() {
@@ -149,7 +149,7 @@ function Nav() {
 
 class App extends React.PureComponent {
   state = {
-    active: false
+    active: false,
   };
   changeActive = (val) => {
     this.setState({ active: val });

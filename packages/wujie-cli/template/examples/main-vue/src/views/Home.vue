@@ -37,7 +37,7 @@
         :style="{
           width: '70px',
           height: '70px',
-          'margin-right': '15px'
+          'margin-right': '15px',
         }"
         src="https://vfiles.gtimg.cn/wuji_dashboard/xy/test_wuji_damy/XC5WMbxE.svg"
       />
@@ -87,7 +87,7 @@ export default {
     return {
       preload: window.localStorage.getItem("preload") !== "false",
       degrade: window.localStorage.getItem("degrade") === "true" || !window.Proxy || !window.CustomElementRegistry,
-      disable: !window.Proxy || !window.CustomElementRegistry
+      disable: !window.Proxy || !window.CustomElementRegistry,
     };
   },
   watch: {
@@ -98,8 +98,8 @@ export default {
     degrade(val) {
       window.localStorage.setItem("degrade", val);
       setTimeout(() => window.location.reload(), 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 

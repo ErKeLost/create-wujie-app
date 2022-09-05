@@ -2,9 +2,7 @@
   <div>
     <HelloWorld msg="location处理"></HelloWorld>
     <div class="content">
-      <p>
-        当用户访问location来获取当前的url时，wujie统一拦截并回填子应用正确的地址
-      </p>
+      <p>当用户访问location来获取当前的url时，wujie统一拦截并回填子应用正确的地址</p>
       <h3>1、获取 location.host 的值</h3>
       <blockquote>
         <div>{{ host }}</div>
@@ -15,9 +13,7 @@
       </blockquote>
       <h3>3、修改window.location.href</h3>
       <el-button type="warning" @click="handleClick">跳转无极</el-button>
-      <p>
-        子应用修改location.href，会将当前的子应用的shadow删除并且替换成一个iframe
-      </p>
+      <p>子应用修改location.href，会将当前的子应用的shadow删除并且替换成一个iframe</p>
       <blockquote>
         <div>如果子应用配置路由同步，浏览器可通过回退回到子应用</div>
       </blockquote>
@@ -46,15 +42,9 @@ export default {
   },
   methods: {
     handleClick() {
-      if (
-        window.__WUJIE?.degrade ||
-        !window.Proxy ||
-        !window.CustomElementRegistry
-      ) {
-        window.$wujie.location.href =
-          "https://wujicode.cn/xy/app/prod/official/home";
-      } else
-        window.location.href = "https://wujicode.cn/xy/app/prod/official/home";
+      if (window.__WUJIE?.degrade || !window.Proxy || !window.CustomElementRegistry) {
+        window.$wujie.location.href = "https://wujicode.cn/xy/app/prod/official/home";
+      } else window.location.href = "https://wujicode.cn/xy/app/prod/official/home";
     },
   },
 };

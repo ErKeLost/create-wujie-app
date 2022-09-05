@@ -6,13 +6,12 @@
 <script>
 import hostMap from "../wujie-config/hostMap";
 
-
 export default {
   computed: {
     viteUrl() {
       return hostMap("//localhost:8083/") + this.$route.params.path;
-    }
-  }
+    },
+  },
 };
 </script>
 

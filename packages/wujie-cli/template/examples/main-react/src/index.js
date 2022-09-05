@@ -28,7 +28,7 @@ setupApp({
   plugins,
   prefix: { "prefix-dialog": "/dialog", "prefix-location": "/location" },
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -39,7 +39,7 @@ setupApp({
   alive: true,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -49,7 +49,7 @@ setupApp({
   exec: true,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -63,7 +63,7 @@ setupApp({
   fetch: (url, options) =>
     url.includes(hostMap("//localhost:8082/")) ? credentialsFetch(url, options) : window.fetch(url, options),
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -73,7 +73,7 @@ setupApp({
   exec: true,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -83,27 +83,27 @@ setupApp({
   exec: true,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 if (window.localStorage.getItem("preload") !== "false") {
   preloadApp({
-    name: "react16"
+    name: "react16",
   });
   preloadApp({
-    name: "react17"
+    name: "react17",
   });
   preloadApp({
-    name: "vue2"
+    name: "vue2",
   });
   preloadApp({
-    name: "vue3"
+    name: "vue3",
   });
   preloadApp({
-    name: "angular12"
+    name: "angular12",
   });
   preloadApp({
-    name: "vite"
+    name: "vite",
   });
 }
 

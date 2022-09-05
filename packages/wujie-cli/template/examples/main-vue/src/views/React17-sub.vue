@@ -9,14 +9,14 @@ import wujieVue from "wujie-vue2";
 export default {
   data() {
     return {
-      react17Url: hostMap("//localhost:7100/") + this.$route.params.path
+      react17Url: hostMap("//localhost:7100/") + this.$route.params.path,
     };
   },
   watch: {
     $route() {
       wujieVue.bus.$emit("react17-router-change", `/${this.$route.params.path}`);
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import router from './router'
+import router from "./router";
 import WujieVue from "wujie-vue3";
 import hostMap from "./wujie-config/hostMap";
 import credentialsFetch from "./wujie-config/fetch";
@@ -14,10 +14,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const { setupApp } = WujieVue;
 app.use(WujieVue).use(router);
 
-const degrade =
-  window.localStorage.getItem("degrade") === "true" ||
-  !window.Proxy ||
-  !window.CustomElementRegistry;
+const degrade = window.localStorage.getItem("degrade") === "true" || !window.Proxy || !window.CustomElementRegistry;
 const props = {
   jump: (name) => {
     router.push({ name });
@@ -33,10 +30,7 @@ setupApp({
   plugins,
   fetch: credentialsFetch,
   degrade,
-  vue2Attrs:
-    process.env.NODE_ENV === "production"
-      ? { src: hostMap("//localhost:8081/") }
-      : {},
+  vue2Attrs: process.env.NODE_ENV === "production" ? { src: hostMap("//localhost:8081/") } : {},
   ...lifecycles,
 });
 
@@ -48,22 +42,15 @@ setupApp({
   alive: true,
   plugins: [
     {
-      cssExcludes: [
-        "https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
-      ],
+      cssExcludes: ["https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"],
     },
   ],
   props,
   // 引入了的第三方样式不需要添加credentials
   fetch: (url, options) =>
-    url.includes(hostMap("//localhost:8082/"))
-      ? credentialsFetch(url, options)
-      : window.fetch(url, options),
+    url.includes(hostMap("//localhost:8082/")) ? credentialsFetch(url, options) : window.fetch(url, options),
   degrade,
-  vue3Attrs:
-    process.env.NODE_ENV === "production"
-      ? { src: hostMap("//localhost:8082/") }
-      : {},
+  vue3Attrs: process.env.NODE_ENV === "production" ? { src: hostMap("//localhost:8082/") } : {},
   ...lifecycles,
 });
 
@@ -75,10 +62,7 @@ setupApp({
   props,
   fetch: credentialsFetch,
   degrade,
-  viteAttrs:
-    process.env.NODE_ENV === "production"
-      ? { src: hostMap("//localhost:8083/") }
-      : {},
+  viteAttrs: process.env.NODE_ENV === "production" ? { src: hostMap("//localhost:8083/") } : {},
   ...lifecycles,
 });
 

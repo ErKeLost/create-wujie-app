@@ -15,7 +15,7 @@ export default function React16() {
   const props = {
     jump: (name) => {
       navigation(`/${name}`);
-    }
+    },
   };
   return (
     <div style={{ height: "100%", width: "100%" }}>

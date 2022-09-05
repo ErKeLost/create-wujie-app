@@ -12,20 +12,17 @@ const routes = [
   {
     path: "/dialog",
     name: "dialog",
-    component: () =>
-      import(/* webpackChunkName: "Page1" */ "../views/Dialog.vue"),
+    component: () => import(/* webpackChunkName: "Page1" */ "../views/Dialog.vue"),
   },
   {
     path: "/communication",
     name: "communication",
-    component: () =>
-      import(/* webpackChunkName: "Page2" */ "../views/Communication.vue"),
+    component: () => import(/* webpackChunkName: "Page2" */ "../views/Communication.vue"),
   },
   {
     path: "/location",
     name: "location",
-    component: () =>
-      import(/* webpackChunkName: "Page3" */ "../views/Location.vue"),
+    component: () => import(/* webpackChunkName: "Page3" */ "../views/Location.vue"),
   },
 ];
 

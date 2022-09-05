@@ -16,7 +16,7 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: Home
+    component: Home,
   },
   {
     path: "/vue2",
@@ -26,7 +26,7 @@ const routes = [
   {
     path: "/vue2-sub/:path",
     name: "vue2-sub",
-    component: Vue2Sub
+    component: Vue2Sub,
   },
   {
     path: "/vue3",
@@ -36,7 +36,7 @@ const routes = [
   {
     path: "/vue3-sub/:path",
     name: "vue3-sub",
-    component: Vue3Sub
+    component: Vue3Sub,
   },
   {
     path: "/vite",
@@ -46,42 +46,42 @@ const routes = [
   {
     path: "/vite-sub/:path",
     name: "vite-sub",
-    component: ViteSub
+    component: ViteSub,
   },
   {
     path: "/react16",
     name: "react16",
-    component: React16
+    component: React16,
   },
   {
     path: "/react16-sub/:path",
     name: "react16-sub",
-    component: React16Sub
+    component: React16Sub,
   },
   {
     path: "/react17",
     name: "react17",
-    component: React17
+    component: React17,
   },
   {
     path: "/react17-sub/:path",
     name: "react17-sub",
-    component: React17Sub
+    component: React17Sub,
   },
   {
     path: "/angular12",
     name: "angular12",
-    component: Angular12
+    component: Angular12,
   },
   {
     path: "/all",
     name: "all",
-    component: Multiple
+    component: Multiple,
   },
   {
     path: "/",
-    redirect: "/home"
-  }
+    redirect: "/home",
+  },
 ];
 
 // 3. 创建路由实例并传递 `routes` 配置

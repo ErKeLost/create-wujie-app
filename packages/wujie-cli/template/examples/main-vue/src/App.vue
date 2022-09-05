@@ -81,7 +81,7 @@ export default {
       react17Flag: this.$route.name === "react17-sub",
       vue2Flag: this.$route.name === "vue2-sub",
       vue3Flag: this.$route.name === "vue3-sub",
-      viteFlag: this.$route.name === "vite-sub"
+      viteFlag: this.$route.name === "vite-sub",
     };
   },
   methods: {
@@ -90,8 +90,8 @@ export default {
     },
     handleFlag(name) {
       this[name + "Flag"] = !this[name + "Flag"];
-    }
-  }
+    },
+  },
 };
 </script>
 

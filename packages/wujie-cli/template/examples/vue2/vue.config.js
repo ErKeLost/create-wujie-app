@@ -10,5 +10,5 @@ module.exports = defineConfig({
     },
     port: "8081",
   },
-  lintOnSave: false
+  lintOnSave: false,
 });

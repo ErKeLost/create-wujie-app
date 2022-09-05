@@ -20,14 +20,14 @@ export default {
       vue2Url: hostMap("//localhost:8081/"),
       vue3Url: hostMap("//localhost:8082/"),
       vite: hostMap("//localhost:8083/"),
-      angular12Url: hostMap("//localhost:7400/")
+      angular12Url: hostMap("//localhost:7400/"),
     };
   },
   methods: {
     jump(name) {
       this.$router.push({ name });
-    }
-  }
+    },
+  },
 };
 </script>
 

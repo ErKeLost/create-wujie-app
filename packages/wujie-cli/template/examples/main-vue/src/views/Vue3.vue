@@ -8,9 +8,9 @@ import hostMap from "../hostMap";
 export default {
   data() {
     return {
-      vue3Url: hostMap("//localhost:8082/")
+      vue3Url: hostMap("//localhost:8082/"),
     };
-  }
+  },
 };
 </script>
 

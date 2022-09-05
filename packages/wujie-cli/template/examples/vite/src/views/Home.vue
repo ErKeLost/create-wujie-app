@@ -2,7 +2,8 @@
   <div>
     <HelloWorld msg="Vue3 + vite示例"></HelloWorld>
     <div class="content" style="text-align: center">
-      <p>当前vite版本
+      <p>
+        当前vite版本
         <el-tag style="vertical-align: text-top" size="small">3.0.7</el-tag>
       </p>
       <p>
@@ -32,8 +33,8 @@ export default {
   },
   methods: {
     handleOpen() {
-      window.open('https://github.com/Tencent/wujie/tree/master/examples/vite')
-    }
+      window.open("https://github.com/Tencent/wujie/tree/master/examples/vite");
+    },
   },
 };
 </script>

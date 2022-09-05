@@ -6,13 +6,12 @@
 <script>
 import hostMap from "../wujie-config/hostMap";
 
-
 export default {
   computed: {
     react16Url() {
       return hostMap("//localhost:7600/") + this.$route.params.path;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -4,11 +4,7 @@ import clearConsole from '@/utils/clearConsole'
 import createSpawnCmd from '@/utils/createSpawnCmd'
 import { ejsRender } from '@/utils/ejsRender'
 import options from '@/shared/options'
-import {
-  templateFilesMap,
-  mainFramework,
-  subFramework
-} from '@/shared/templateFile'
+import { templateFilesMap, mainFramework, subFramework } from '@/shared/templateFile'
 import PackageDevice from '@/questions/packageManager'
 import projectName from '@/questions/projectName'
 import framework from '@/questions/framework'
@@ -58,9 +54,7 @@ async function install() {
   // 开始记录用时
   startTime = new Date().getTime()
 
-  yellow(
-    `> The project template is generated in the directory: ${options.dest}`
-  )
+  yellow(`> The project template is generated in the directory: ${options.dest}`)
   // Git 初始化
   await cmdIgnore('git', ['init'])
   await cmdIgnore('git', ['add .'])
@@ -74,15 +68,11 @@ async function install() {
   clearConsole()
   endTime = new Date().getTime()
   const usageTime = (endTime - startTime) / 1000
-  cyan(
-    `> The WuJie Demo Project has been created successfully Usage time ${usageTime}s`
-  )
+  cyan(`> The WuJie Demo Project has been created successfully Usage time ${usageTime}s`)
   console.log('')
   cyan(`✨✨ cd ${options.name}`)
   cyan(
-    options.package === 'npm'
-      ? `✨✨ ${options.package} run dev`
-      : `✨✨ ${options.package} dev`
+    options.package === 'npm' ? `✨✨ ${options.package} run dev` : `✨✨ ${options.package} dev`
   )
 }
 async function renderTemplate() {
@@ -126,9 +116,7 @@ async function renderTemplate() {
 // create project
 async function createWuJieProject() {
   clearConsole()
-  console.log(
-    gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n')
-  )
+  console.log(gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n'))
   await createProjectQuestions()
   await renderTemplate()
   await install()

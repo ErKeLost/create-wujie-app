@@ -11,19 +11,19 @@ export default class Dialog extends React.Component {
 
   showModal = () => {
     this.setState({
-      visible: true
+      visible: true,
     });
   };
 
   handleOk = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
 
   handleCancel = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
 

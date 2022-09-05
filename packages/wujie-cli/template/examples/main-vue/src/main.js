@@ -40,7 +40,7 @@ const degrade = window.localStorage.getItem("degrade") === "true" || !window.Pro
 const props = {
   jump: (name) => {
     router.push({ name });
-  }
+  },
 };
 // 创建应用，主要是设置配置，preloadApp、startApp的配置基于这个配置做覆盖
 setupApp({
@@ -48,7 +48,7 @@ setupApp({
   url: hostMap("//localhost:7600/"),
   attrs: isProduction
     ? {
-        src: hostMap("//localhost:7600/")
+        src: hostMap("//localhost:7600/"),
       }
     : {},
   exec: true,
@@ -57,17 +57,17 @@ setupApp({
   plugins,
   prefix: {
     "prefix-dialog": "/dialog",
-    "prefix-location": "/location"
+    "prefix-location": "/location",
   },
   degrade,
   // 修正iframe的url，防止github pages csp报错
   react16Attrs:
     process.env.NODE_ENV === "production"
       ? {
-          src: hostMap("//localhost:7600/")
+          src: hostMap("//localhost:7600/"),
         }
       : {},
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -75,7 +75,7 @@ setupApp({
   url: hostMap("//localhost:7100/"),
   attrs: isProduction
     ? {
-        src: hostMap("//localhost:7100/")
+        src: hostMap("//localhost:7100/"),
       }
     : {},
   exec: true,
@@ -83,7 +83,7 @@ setupApp({
   props,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -91,14 +91,14 @@ setupApp({
   url: hostMap("//localhost:8081/"),
   attrs: isProduction
     ? {
-        src: hostMap("//localhost:8081/")
+        src: hostMap("//localhost:8081/"),
       }
     : {},
   exec: true,
   props,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -106,22 +106,22 @@ setupApp({
   url: hostMap("//localhost:8082/"),
   attrs: isProduction
     ? {
-        src: hostMap("//localhost:8082/")
+        src: hostMap("//localhost:8082/"),
       }
     : {},
   exec: true,
   alive: true,
   plugins: [
     {
-      cssExcludes: ["https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"]
-    }
+      cssExcludes: ["https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"],
+    },
   ],
   props,
   // 引入了的第三方样式不需要添加credentials
   fetch: (url, options) =>
     url.includes(hostMap("//localhost:8082/")) ? credentialsFetch(url, options) : window.fetch(url, options),
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -129,14 +129,14 @@ setupApp({
   url: hostMap("//localhost:7400/"),
   attrs: isProduction
     ? {
-        src: hostMap("//localhost:7400/")
+        src: hostMap("//localhost:7400/"),
       }
     : {},
   exec: true,
   props,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 setupApp({
@@ -144,38 +144,38 @@ setupApp({
   url: hostMap("//localhost:8083/"),
   attrs: isProduction
     ? {
-        src: hostMap("//localhost:8083/")
+        src: hostMap("//localhost:8083/"),
       }
     : {},
   exec: true,
   props,
   fetch: credentialsFetch,
   degrade,
-  ...lifecycles
+  ...lifecycles,
 });
 
 if (window.localStorage.getItem("preload") !== "false") {
   preloadApp({
-    name: "react16"
+    name: "react16",
   });
   preloadApp({
-    name: "react17"
+    name: "react17",
   });
   preloadApp({
-    name: "vue2"
+    name: "vue2",
   });
   preloadApp({
-    name: "vue3"
+    name: "vue3",
   });
   preloadApp({
-    name: "angular12"
+    name: "angular12",
   });
   preloadApp({
-    name: "vite"
+    name: "vite",
   });
 }
 
 new Vue({
   router,
-  render: (h) => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

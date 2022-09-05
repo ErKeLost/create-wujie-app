@@ -21,78 +21,78 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: Home
+    component: Home,
   },
   {
     path: "/react16",
     name: "react16",
-    component: React16
+    component: React16,
   },
   {
     path: "/react16-sub/:path",
     name: "react16-sub",
-    component: React16Sub
+    component: React16Sub,
   },
   {
     path: "/react17",
     name: "react17",
-    component: React17
+    component: React17,
   },
   {
     path: "/react17-sub/:path",
     name: "react17-sub",
-    component: React17Sub
+    component: React17Sub,
   },
   {
     path: "/vue2",
     name: "vue2",
-    component: Vue2
+    component: Vue2,
   },
   {
     path: "/vue2-sub/:path",
     name: "vue2-sub",
-    component: Vue2Sub
+    component: Vue2Sub,
   },
   {
     path: "/vite",
     name: "vite",
-    component: Vite
+    component: Vite,
   },
   {
     path: "/vite-sub/:path",
     name: "vite-sub",
-    component: ViteSub
+    component: ViteSub,
   },
   {
     path: "/vue3",
     name: "vue3",
-    component: Vue3
+    component: Vue3,
   },
   {
     path: "/vue3-sub/:path",
     name: "vue3-sub",
-    component: Vue3Sub
+    component: Vue3Sub,
   },
   {
     path: "/angular12",
     name: "angular12",
-    component: Angular12
+    component: Angular12,
   },
   {
     path: "/all",
     name: "all",
-    component: Multiple
+    component: Multiple,
   },
   {
     path: "/",
-    redirect: "/home"
-  }
+    redirect: "/home",
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: basename,
-  routes
+  routes,
 });
 
 export default router;

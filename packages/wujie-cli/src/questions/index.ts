@@ -11,6 +11,4 @@ async function createQuestion(util, question) {
   return Promise.resolve(true)
 }
 
-
-
 export default createQuestion

@@ -6,18 +6,17 @@
 <script>
 import hostMap from "../wujie-config/hostMap";
 
-
 export default {
   computed: {
     vue2Url() {
       return hostMap("//localhost:8081/") + `#/${this.$route.params.path}`;
-    }
+    },
   },
   methods: {
     jump(name) {
       this.$router.push({ name });
-    }
-  }
+    },
+  },
 };
 </script>
 

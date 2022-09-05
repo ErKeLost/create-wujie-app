@@ -9,7 +9,7 @@ export default function Angular12() {
   const props = {
     jump: (name) => {
       navigation(`/${name}`);
-    }
+    },
   };
   return (
     <WujieReact width="100%" height="100%" name="angular12" url={angular12Url} sync={true} props={props}></WujieReact>

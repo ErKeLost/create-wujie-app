@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "turbo run start --parallel --no-cache",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --parallel && pnpm dev --filter=main-vite",
     "doc": "turbo run docs:dev --filter=wujie-doc",
     "build": "turbo run build --filter=\"wujie-*\" --filter=wujie",
     "start:lib": "turbo run start:esm",

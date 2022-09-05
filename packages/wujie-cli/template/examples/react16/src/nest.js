@@ -14,7 +14,7 @@ export default function React17() {
   const props = {
     jump: (name) => {
       window?.$wujie.props.jump(name);
-    }
+    },
   };
   return (
     <div>

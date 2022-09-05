@@ -10,8 +10,8 @@ export default {
   computed: {
     viteUrl() {
       return hostMap("//localhost:8083/") + this.$route.params.path;
-    }
-  }
+    },
+  },
 };
 </script>
 

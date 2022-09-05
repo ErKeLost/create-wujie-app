@@ -6,24 +6,14 @@
       <h3>1、打开弹窗</h3>
       <p>
         <el-button @click="dialogVisible = true">点击打开el-dialog</el-button>
-        <a-button @click="modalVisible = true" style="margin-left: 20px"
-          >点击打开ant-modal</a-button
-        >
+        <a-button @click="modalVisible = true" style="margin-left: 20px">点击打开ant-modal</a-button>
       </p>
       <h3>2、打开选择器</h3>
       <p>
         <el-select v-model="value" placeholder="el-select">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          ></el-option>
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
-        <a-select
-          placeholder="ant-select"
-          style="margin-left: 20px; width: 200px"
-        >
+        <a-select placeholder="ant-select" style="margin-left: 20px; width: 200px">
           <a-select-option value="jack">Jack</a-select-option>
           <a-select-option value="lucy">Lucy</a-select-option>
           <a-select-option value="disabled" disabled>Disabled</a-select-option>
@@ -58,16 +48,10 @@
       <span>这是一段信息</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
-    <a-modal
-      v-model="modalVisible"
-      title="ant Modal"
-      @ok="modalVisible = false"
-    >
+    <a-modal v-model="modalVisible" title="ant Modal" @ok="modalVisible = false">
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>

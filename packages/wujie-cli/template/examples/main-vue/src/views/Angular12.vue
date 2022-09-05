@@ -13,11 +13,11 @@ export default {
       attrs:
         process.env.NODE_ENV === "production"
           ? {
-              src: hostMap("//localhost:7400/")
+              src: hostMap("//localhost:7400/"),
             }
-          : {}
+          : {},
     };
-  }
+  },
 };
 </script>
 

@@ -83,7 +83,7 @@ export default {
     return {
       preload: window.localStorage.getItem("preload") !== "false",
       degrade: window.localStorage.getItem("degrade") === "true" || !window.Proxy || !window.CustomElementRegistry,
-      disable: !window.Proxy || !window.CustomElementRegistry
+      disable: !window.Proxy || !window.CustomElementRegistry,
     };
   },
   watch: {
@@ -94,8 +94,8 @@ export default {
     degrade(val) {
       window.localStorage.setItem("degrade", val);
       setTimeout(() => window.location.reload(), 1000);
-    }
-  }
+    },
+  },
 };
 </script>
 

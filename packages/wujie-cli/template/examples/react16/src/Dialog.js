@@ -11,13 +11,13 @@ export default class Dialog extends React.Component {
 
   showModal = () => {
     this.setState({
-      visible: true
+      visible: true,
     });
   };
 
   handleOk = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
 
@@ -27,7 +27,7 @@ export default class Dialog extends React.Component {
 
   handleCancel = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
   render() {

@@ -9,9 +9,9 @@ import hostMap from "../hostMap";
 export default {
   data() {
     return {
-      viteUrl: hostMap("//localhost:8083/")
+      viteUrl: hostMap("//localhost:8083/"),
     };
-  }
+  },
 };
 </script>
 

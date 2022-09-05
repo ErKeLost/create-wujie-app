@@ -9,14 +9,14 @@ import hostMap from "../hostMap";
 export default {
   data() {
     return {
-      vue2Url: hostMap("//localhost:8081/")
+      vue2Url: hostMap("//localhost:8081/"),
     };
   },
   methods: {
     jump(name) {
       this.$router.push({ name });
-    }
-  }
+    },
+  },
 };
 </script>
 

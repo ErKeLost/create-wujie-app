@@ -3,8 +3,7 @@ export default [
     name: 'mainFramework',
     type: 'select',
     instructions: false,
-    message:
-      'What framework do you choose as your main application (选择什么框架作为你的主应用)',
+    message: 'What framework do you choose as your main application (选择什么框架作为你的主应用)',
     choices: [
       {
         title: 'Webpack + Vue2',
@@ -23,8 +22,7 @@ export default [
   {
     name: 'subFramework',
     type: 'multiselect',
-    message:
-      'What framework do you choose as your sub application (选择什么框架作为你的子应用)',
+    message: 'What framework do you choose as your sub application (选择什么框架作为你的子应用)',
     instructions: false,
     choices: [
       {

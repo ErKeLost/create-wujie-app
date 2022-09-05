@@ -79,7 +79,7 @@ checkBrowsers(paths.appPath, isInteractive)
       urls,
       useYarn,
       useTypeScript,
-      webpack
+      webpack,
     });
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;
@@ -88,7 +88,7 @@ checkBrowsers(paths.appPath, isInteractive)
     const serverConfig = {
       ...createDevServerConfig(proxyConfig, urls.lanUrlForConfig),
       host: HOST,
-      port
+      port,
     };
     const devServer = new WebpackDevServer(serverConfig, compiler);
     // Launch WebpackDevServer.

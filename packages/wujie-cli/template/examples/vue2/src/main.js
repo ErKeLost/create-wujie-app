@@ -29,9 +29,7 @@ import "./index.css";
 
 const base = process.env.NODE_ENV === "production" ? "/demo-vue2/" : "";
 
-[Tag, Button, Select, Option, Popover, Dialog].forEach((element) =>
-  Vue.use(element)
-);
+[Tag, Button, Select, Option, Popover, Dialog].forEach((element) => Vue.use(element));
 [AButton, ASelect, AModal, APopover].forEach((element) => Vue.use(element));
 
 Vue.use(VueRouter);

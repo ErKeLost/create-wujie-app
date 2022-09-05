@@ -8,7 +8,7 @@ export default class Home extends React.Component {
   state = {
     checkState: window.localStorage.getItem("preload") !== "false",
     disable: !window.Proxy || !window.CustomElementRegistry,
-    degradeState: window.localStorage.getItem("degrade") === "true" || !window.Proxy || !window.CustomElementRegistry
+    degradeState: window.localStorage.getItem("degrade") === "true" || !window.Proxy || !window.CustomElementRegistry,
   };
   checkStateChange = (check) => {
     window.localStorage.setItem("preload", check);

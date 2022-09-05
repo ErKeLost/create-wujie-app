@@ -9,9 +9,9 @@ import hostMap from "../hostMap";
 export default {
   data() {
     return {
-      react16Url: hostMap("//localhost:7600/")
+      react16Url: hostMap("//localhost:7600/"),
     };
-  }
+  },
 };
 </script>
 

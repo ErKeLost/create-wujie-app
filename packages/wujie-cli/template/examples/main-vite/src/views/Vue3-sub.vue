@@ -10,14 +10,14 @@ import wujieVue from "wujie-vue3";
 export default {
   data() {
     return {
-      vue3Url: hostMap("//localhost:8082/") + this.$route.params.path
+      vue3Url: hostMap("//localhost:8082/") + this.$route.params.path,
     };
   },
   watch: {
     $route() {
       wujieVue.bus.$emit("vue3-router-change", `/${this.$route.params.path}`);
-    }
-  }
+    },
+  },
 };
 </script>
 

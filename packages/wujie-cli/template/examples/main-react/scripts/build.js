@@ -140,7 +140,7 @@ function build(previousFileSizes) {
 
         messages = formatWebpackMessages({
           errors: [errMessage],
-          warnings: []
+          warnings: [],
         });
       } else {
         messages = formatWebpackMessages(stats.toJson({ all: false, warnings: true, errors: true }));
@@ -174,7 +174,7 @@ function build(previousFileSizes) {
       const resolveArgs = {
         stats,
         previousFileSizes,
-        warnings: messages.warnings
+        warnings: messages.warnings,
       };
 
       if (writeStatsJson) {
@@ -192,6 +192,6 @@ function build(previousFileSizes) {
 function copyPublicFolder() {
   fs.copySync(paths.appPublic, paths.appBuild, {
     dereference: true,
-    filter: (file) => file !== paths.appHtml
+    filter: (file) => file !== paths.appHtml,
   });
 }

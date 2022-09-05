@@ -1,7 +1,11 @@
 <template>
   <HelloWorld msg="location处理"></HelloWorld>
   <div class="content">
-    <p>当采用 vite 编译框架时，由于 script 的标签 type 为 module，所以无法采用闭包的方式将 location 劫持代理，这里将代理的 location 挂载到 $wujie 上，子应用所有采用 window.location 的代码需要统一修改成 $wujie.location</p>
+    <p>
+      当采用 vite 编译框架时，由于 script 的标签 type 为 module，所以无法采用闭包的方式将 location
+      劫持代理，这里将代理的 location 挂载到 $wujie 上，子应用所有采用 window.location 的代码需要统一修改成
+      $wujie.location
+    </p>
     <h3>1、获取 window.location.host 的值</h3>
     <blockquote>
       <div>{{ windowHost }}</div>

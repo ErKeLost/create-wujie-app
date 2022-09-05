@@ -46,7 +46,7 @@ function getHttpsConfig() {
     const keyFile = path.resolve(paths.appPath, SSL_KEY_FILE);
     const config = {
       cert: readEnvFile(crtFile, "SSL_CRT_FILE"),
-      key: readEnvFile(keyFile, "SSL_KEY_FILE")
+      key: readEnvFile(keyFile, "SSL_KEY_FILE"),
     };
 
     validateKeyAndCerts({ ...config, keyFile, crtFile });
