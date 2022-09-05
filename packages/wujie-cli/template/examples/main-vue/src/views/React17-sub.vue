@@ -4,9 +4,8 @@
 </template>
 
 <script>
-import hostMap from "../wujie-config/hostMap";
-
-import wujieVue from "wujie-vue3";
+import hostMap from "../hostMap";
+import wujieVue from "wujie-vue2";
 export default {
   data() {
     return {

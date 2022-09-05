@@ -4,13 +4,12 @@
 </template>
 
 <script>
-import hostMap from "../wujie-config/hostMap";
-
-import wujieVue from "wujie-vue3";
+import hostMap from "../hostMap";
+import wujieVue from "wujie-vue2";
 export default {
   data() {
     return {
-      vue3Url: hostMap("//localhost:8082/") + this.$route.params.path
+      vue3Url: hostMap("//localhost:8081/") + this.$route.params.path
     };
   },
   watch: {

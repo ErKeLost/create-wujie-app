@@ -4,8 +4,7 @@
 </template>
 
 <script>
-import hostMap from "../wujie-config/hostMap";
-
+import hostMap from "../hostMap";
 
 export default {
   data() {

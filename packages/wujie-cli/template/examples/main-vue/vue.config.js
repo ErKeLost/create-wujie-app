@@ -1,21 +1,15 @@
-const { defineConfig } = require("@vue/cli-service");
-const path = require("path");
+// vue.config.js
 
-function resolve(dir) {
-  return path.join(__dirname, dir);
-}
-module.exports = defineConfig({
-  transpileDependencies: true,
-  chainWebpack: (config) => {
-    config.resolve.alias.set("@$", resolve("src"));
-  },
-  lintOnSave: false,
+/**
+ * @type {import('@vue/cli-service').ProjectOptions}
+ */
+module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "/demo-main-vue/" : "/",
   devServer: {
     headers: {
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "*"
     },
-    host: "localhost",
-    port: "8080",
-    open: true,
-  },
-});
+    open: process.env.NODE_ENV === "development",
+    port: "8000"
+  }
+};

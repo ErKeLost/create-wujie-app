@@ -44,8 +44,8 @@ setupApp({
 
 setupApp({
   name: "vue2",
-  url: hostMap("//localhost:8001/"),
-  attrs: isProduction ? { src: hostMap("//localhost:8002/") } : {},
+  url: hostMap("//localhost:8081/"),
+  attrs: isProduction ? { src: hostMap("//localhost:8081/") } : {},
   exec: true,
   fetch: credentialsFetch,
   degrade,

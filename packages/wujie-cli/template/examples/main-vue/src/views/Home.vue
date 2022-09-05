@@ -34,7 +34,11 @@
     </div>
     <h1 class="header">
       <img
-        :style="{ width: '70px', height: '70px', 'margin-right': '15px' }"
+        :style="{
+          width: '70px',
+          height: '70px',
+          'margin-right': '15px'
+        }"
         src="https://vfiles.gtimg.cn/wuji_dashboard/xy/test_wuji_damy/XC5WMbxE.svg"
       />
       <span class="bland">无界</span>
