@@ -7,7 +7,7 @@ export async function ejsRender(filePath: string, name): Promise<void> {
   try {
     let prettierCode: string
     // 根目录template 绝对路径
-    const templatePath = path.resolve(__dirname, `../template/${options.frame}`)
+    const templatePath = path.resolve(__dirname, `../template`)
     // 获取当前渲染文件的 各种 参数 such as ext
     const file = path.parse(filePath)
     // 编译根目录 创建的根目录

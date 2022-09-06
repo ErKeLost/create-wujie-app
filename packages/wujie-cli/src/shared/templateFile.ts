@@ -1,16 +1,17 @@
+import options from './options'
+
+const MAIN_PREFIX_VUE = `examples/main-vue/src`
+const MAIN_PREFIX_VITE = `examples/main-vite/src`
+const MAIN_PREFIX_REACT = `examples/${options.mainFramework}`
+
+
 const templateFilesMap = [
-  'package.json',
-  'vite.config.ts',
-  'src/main.ts',
-  'build/vite/plugin.ts',
-  'src/plugins/customComponents.ts',
-  'src/components/Welcome.vue',
-  'src/components/HelloWorld.vue',
-  'src/App.vue',
-  'src/plugins/assets.ts',
-  'src/store/modules/counter.ts',
-  '.eslintrc.js',
-  'index.html'
+  `${MAIN_PREFIX_VUE}/main.js`,
+  // `${MAIN_PREFIX_VITE}/main.ts`,
+  `${MAIN_PREFIX_VUE}/App.vue`,
+  // `${MAIN_PREFIX_VITE}/App.vue`,
+  `${MAIN_PREFIX_VUE}/router/index.js`,
+  // `${MAIN_PREFIX_VITE}/router/index.ts`,
 ]
 
 const mainFramework = ['main-vue', 'main-react', 'main-vite']

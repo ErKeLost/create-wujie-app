@@ -91,8 +91,7 @@ async function renderTemplate() {
   console.log(mainFramework)
 
   mainFramework.forEach(async (item) => {
-    console.log(item)
-
+    console.log(`${options.dest}/examples/${item}`)
     await fs.remove(`${options.dest}/examples/${item}`)
   })
   const obj = {}
@@ -105,12 +104,10 @@ async function renderTemplate() {
   subItems.forEach(async (item) => {
     await fs.remove(`${options.dest}/examples/${item}`)
   })
+  console.log(options)
 
   // 编译 ejs 模板文件
-  // await Promise.all(
-  //   templateFilesMap
-  //     .map((file) => ejsRender(file, options.name))
-  // )
+  await Promise.all(templateFilesMap.map((file) => ejsRender(file, options.name)))
 }
 
 // create project
@@ -119,7 +116,7 @@ async function createWuJieProject() {
   console.log(gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n'))
   await createProjectQuestions()
   await renderTemplate()
-  await install()
+  // await install()
 }
 
 createWuJieProject()

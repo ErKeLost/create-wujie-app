@@ -10,5 +10,6 @@ module.exports = {
       "Access-Control-Allow-Origin": "*"
     },
     port: "8082"
-  }
+  },
+  lintOnSave: false
 };

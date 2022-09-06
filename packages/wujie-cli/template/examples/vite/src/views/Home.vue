@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HelloWorld msg="Vue3 + vite示例"></HelloWorld>
+    <HelloWorld msg="Vue3 + vite3示例"></HelloWorld>
     <div class="content" style="text-align: center">
       <p>
         当前vite版本

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import hostMap from "../hostMap";
+import hostMap from "../../wujie-config/hostMap";
 
 export default {
   data() {
