@@ -7,3 +7,7 @@
 # wujie（无界）
 
 快速搭建 wujie 微前端框架。
+
+```
+npx create-wujie-app@latest
+```
