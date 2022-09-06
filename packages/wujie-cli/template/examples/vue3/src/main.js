@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router/index.ejs";
+import router from "./router/index.js";
 import Tag from "element-plus/es/components/tag/index";
 import Button from "element-plus/es/components/button/index";
 import Dialog from "element-plus/es/components/dialog/index";

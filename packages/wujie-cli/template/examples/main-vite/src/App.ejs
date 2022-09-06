@@ -3,7 +3,7 @@
     <div id="nav" :class="active ? 'active' : ''" @click="close">
       <router-link to="/home">介绍</router-link>
       <!-- react16相关路由 -->
-      <% if (subFramework.includes('react16')) { -%>
+      <% if (subFramework.includes('React16')) { -%>
       <router-link to="/react16">
         react16
         <!-- <a-icon :class="['main-icon', { active: react16Flag }]" type="caret-up" @click.native="handleFlag('react16')" /> -->
@@ -17,7 +17,7 @@
         <router-link to="/react16-sub/font">font</router-link>
       </div>
       <% } -%>
-      <% if (subFramework.includes('react17')) { -%>
+      <% if (subFramework.includes('React17')) { -%>
       <!-- react17相关路由 -->
       <router-link to="/react17">
         react17
@@ -32,7 +32,7 @@
         <router-link to="/react17-sub/state">state</router-link>
       </div>
       <% } -%>
-      <% if (subFramework.includes('vue2')) { -%>
+      <% if (subFramework.includes('Vue2')) { -%>
       <!-- vue2相关路由 -->
       <router-link to="/vue2">
         vue2
@@ -45,7 +45,7 @@
         <router-link to="/vue2-sub/communication">communication</router-link>
       </div>
       <% } -%>
-      <% if (subFramework.includes('vue3')) { -%>
+      <% if (subFramework.includes('Vue3')) { -%>
       <!-- vue3相关路由 -->
       <router-link to="/vue3">
         vue3
@@ -60,7 +60,7 @@
         <router-link to="/vue3-sub/state">state</router-link>
       </div>
       <% } -%>
-      <% if (subFramework.includes('vite')) { -%>
+      <% if (subFramework.includes('Vite')) { -%>
       <router-link to="/vite"
         >vite
         <!-- <a-icon :class="['main-icon', { active: viteFlag }]" type="caret-up" @click.native="handleFlag('vite')" -->
