@@ -20,6 +20,22 @@ export default [
     ]
   },
   {
+    name: 'mainRouter',
+    type: 'select',
+    instructions: false,
+    message: 'Select the main application route pattern (选择主应用路由模式)',
+    choices: [
+      {
+        title: 'hash',
+        value: 'hash'
+      },
+      {
+        title: 'history',
+        value: 'history'
+      }
+    ]
+  },
+  {
     name: 'subFramework',
     type: 'multiselect',
     message: 'What framework do you choose as your sub application (选择什么框架作为你的子应用)',
@@ -27,15 +43,15 @@ export default [
     choices: [
       {
         title: 'Vite',
-        value: 'vite'
+        value: 'Vite'
       },
       {
         title: 'Vue2',
-        value: 'vue2'
+        value: 'Vue2'
       },
       {
         title: 'Vue3',
-        value: 'vue3'
+        value: 'Vue3'
       },
       {
         title: 'React16',
@@ -51,6 +67,22 @@ export default [
         disabled: true
       },
       { title: 'Angular12', value: 'angular12' }
+    ]
+  },
+  {
+    name: 'subRouter',
+    type: 'select',
+    instructions: false,
+    message: 'Select the sub application route pattern (选择子应用路由模式)',
+    choices: [
+      {
+        title: 'hash',
+        value: 'hash'
+      },
+      {
+        title: 'history',
+        value: 'history'
+      }
     ]
   }
 ]

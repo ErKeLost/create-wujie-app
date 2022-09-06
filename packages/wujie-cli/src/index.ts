@@ -4,7 +4,7 @@ import clearConsole from '@/utils/clearConsole'
 import createSpawnCmd from '@/utils/createSpawnCmd'
 import { ejsRender } from '@/utils/ejsRender'
 import options from '@/shared/options'
-import { templateFilesMap, mainFramework, subFramework } from '@/shared/templateFile'
+import { renderTemplateFiles, mainFramework, subFramework } from '@/shared/templateFile'
 import PackageDevice from '@/questions/packageManager'
 import projectName from '@/questions/projectName'
 import framework from '@/questions/framework'
@@ -98,16 +98,42 @@ async function renderTemplate() {
   options.subFramework.forEach((item) => (obj[`${item}`] = true)) // 将需要对比的数组的值作为 obj的key
   const subItems = subFramework.map((item) => {
     if (!obj[item]) {
-      return item
+      return item.toLowerCase()
     }
   }) // 这里是对比出来不同的元素
   subItems.forEach(async (item) => {
     await fs.remove(`${options.dest}/examples/${item}`)
   })
+  // 移除主应用view 文件 vue模式
+  const removeSubFramework = getArrDiff(subFramework, options.subFramework)
+  console.log(removeSubFramework)
+
+  if (options.mainFramework.includes('main-react')) {
+    console.log('remove react file')
+    removeSubFramework.forEach(async (item) => {
+      await fs.remove(
+        `${options.dest}/examples/${options.mainFramework}/views/${item}.vue`
+      )
+      await fs.remove(
+        `${options.dest}/examples/${options.mainFramework}/views/${item}-sub.vue`
+      )
+    })
+  } else {
+    console.log('remove vue file')
+    removeSubFramework.forEach(async (item) => {
+      await fs.remove(
+        `${options.dest}/examples/${options.mainFramework}/src/views/${item}.vue`
+      )
+      await fs.remove(
+        `${options.dest}/examples/${options.mainFramework}/src/views/${item.toLowerCase()}-sub.vue`
+      )
+    })
+  }
+
   console.log(options)
 
   // 编译 ejs 模板文件
-  await Promise.all(templateFilesMap.map((file) => ejsRender(file, options.name)))
+  await Promise.all(renderTemplateFiles().map((file) => ejsRender(file, options.name)))
 }
 
 // create project
@@ -120,3 +146,9 @@ async function createWuJieProject() {
 }
 
 createWuJieProject()
+
+function getArrDiff(arr1, arr2) {
+  return [...arr1, ...arr2].filter((item, index, arr) => {
+    return arr.indexOf(item) === arr.lastIndexOf(item)
+  })
+}
