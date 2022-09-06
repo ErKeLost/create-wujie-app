@@ -24,7 +24,12 @@ function renderTemplateFiles() {
     ],
     ['main-react', []]
   ])
-  return mainFrameworkMap.get(options.mainFramework)
+  return [
+    ...mainFrameworkMap.get(options.mainFramework),
+    'examples/vue2/src/main.js',
+    'examples/vue3/src/router/index.js',
+    'examples/vite/src/main.ts'
+  ]
 }
 
 const mainFramework = ['main-vue', 'main-react', 'main-vite']

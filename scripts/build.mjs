@@ -8,6 +8,7 @@ await esbuild.build({
   platform: 'node',
   target: 'node14',
   treeShaking: true,
+  external: ['prettier'],
   plugins: [
     {
       name: 'alias',

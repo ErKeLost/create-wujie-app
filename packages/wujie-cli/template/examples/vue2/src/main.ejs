@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import routes from "./router";
+import routes from "./router/index.ejs";
 import VueRouter from "vue-router";
 import Tag from "element-ui/lib/tag";
 import Button from "element-ui/lib/button";
@@ -39,7 +39,16 @@ Vue.config.productionTip = false;
 if (window.__POWERED_BY_WUJIE__) {
   let instance;
   window.__WUJIE_MOUNT = () => {
-    const router = new VueRouter({ base, routes });
+    const router = new VueRouter({
+      <% if (subRouter === 'hash') { -%>
+      mode: 'hash',
+      <% } -%>
+      <% if (subRouter === 'history') { -%>
+      mode: 'history',
+      <% } -%>
+      base,
+      routes,
+    });
     instance = new Vue({ router, render: (h) => h(App) }).$mount("#app");
   };
   window.__WUJIE_UNMOUNT = () => {
@@ -47,7 +56,16 @@ if (window.__POWERED_BY_WUJIE__) {
   };
 } else {
   new Vue({
-    router: new VueRouter({ base, routes }),
+      router: new VueRouter({
+      <% if (subRouter === 'hash') { -%>
+      mode: 'hash',
+      <% } -%>
+      <% if (subRouter === 'history') { -%>
+      mode: 'history',
+      <% } -%>
+      base,
+      routes
+    }),
     render: (h) => h(App),
   }).$mount("#app");
 }

@@ -1,7 +1,12 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import routes from "./router";
+<% if (subRouter === 'hash') { -%>
+import { createRouter, createWebHashHistory } from "vue-router";
+<% } -%>
+<% if (subRouter === 'history') { -%>
 import { createRouter, createWebHistory } from "vue-router";
+<% } -%>
 import Tag from "element-plus/es/components/tag/index";
 import Button from "element-plus/es/components/button/index";
 import Dialog from "element-plus/es/components/dialog/index";
@@ -24,7 +29,8 @@ import "ant-design-vue/es/popover/style/index.css";
 import "./style.css";
 
 const basename = process.env.NODE_ENV === "production" ? "/demo-vite/" : "";
-declare global {
+
+<!-- declare global {
   interface Window {
     // 是否存在无界
     __POWERED_BY_WUJIE__?: boolean;
@@ -35,13 +41,18 @@ declare global {
     // 子应用无界实例
     __WUJIE: { mount: () => void };
   }
-}
+} -->
 
 if (window.__POWERED_BY_WUJIE__) {
   let instance: any;
   window.__WUJIE_MOUNT = () => {
     const router = createRouter({
+      <% if (subRouter === 'hash') { -%>
+      history: createWebHashHistory(basename),
+      <% } -%>
+      <% if (subRouter === 'history') { -%>
       history: createWebHistory(basename),
+      <% } -%>
       routes,
     });
     instance = createApp(App)
@@ -73,6 +84,11 @@ if (window.__POWERED_BY_WUJIE__) {
     .use(ASelect)
     .use(AModal)
     .use(APopover)
+    <% if (subRouter === 'hash') { -%>
+    .use(createRouter({ history: createWebHashHistory(basename), routes }))
+    <% } -%>
+    <% if (subRouter === 'history') { -%>
     .use(createRouter({ history: createWebHistory(basename), routes }))
+    <% } -%>
     .mount("#app");
 }

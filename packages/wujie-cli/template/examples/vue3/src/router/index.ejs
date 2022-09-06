@@ -1,4 +1,10 @@
+<% if (subRouter === 'hash') { -%>
+import { createRouter, createWebHashHistory } from "vue-router";
+<% } -%>
+<% if (subRouter === 'history') { -%>
 import { createRouter, createWebHistory } from "vue-router";
+<% } -%>
+
 import Home from "../views/Home.vue";
 const basename = process.env.NODE_ENV === "production" ? "/demo-vue3/" : "";
 
@@ -46,7 +52,12 @@ const routes = [
 ];
 
 const router = createRouter({
+  <% if (subRouter === 'hash') { -%>
+  history: createWebHashHistory(basename),
+  <% } -%>
+  <% if (subRouter === 'history') { -%>
   history: createWebHistory(basename),
+  <% } -%>
   routes
 });
 
