@@ -6,27 +6,27 @@ import { createRouter, createWebHistory } from "vue-router";
 <% } -%>
 import Home from "../views/Home.vue";
 import Multiple from "../views/Multiple.vue";
-<% if (subFramework.includes('vue2')) { -%>
+<% if (subFramework.includes('Vue2')) { -%>
 import Vue2 from "../views/Vue2.vue";
 import Vue2Sub from "../views/Vue2-sub.vue";
 <% } -%>
-<% if (subFramework.includes('vue3')) { -%>
+<% if (subFramework.includes('Vue3')) { -%>
 import Vue3 from "../views/Vue3.vue";
 import Vue3Sub from "../views/Vue3-sub.vue";
 <% } -%>
-<% if (subFramework.includes('vite')) { -%>
+<% if (subFramework.includes('Vite')) { -%>
 import Vite from "../views/Vite.vue";
 import ViteSub from "../views/Vite-sub.vue";
 <% } -%>
-<% if (subFramework.includes('react16')) { -%>
+<% if (subFramework.includes('React16')) { -%>
 import React16 from "../views/React16.vue";
 import React16Sub from "../views/React16-sub.vue";
 <% } -%>
-<% if (subFramework.includes('react17')) { -%>
+<% if (subFramework.includes('React17')) { -%>
 import React17 from "../views/React17.vue";
 import React17Sub from "../views/React17-sub.vue";
 <% } -%>
-<% if (subFramework.includes('angular12')) { -%>
+<% if (subFramework.includes('Angular12')) { -%>
 import Angular12 from "../views/Angular12.vue";
 <% } -%>
 
@@ -45,7 +45,7 @@ const routes = [
     name: "home",
     component: Home,
   },
-  <% if (subFramework.includes('vue2')) { -%>
+  <% if (subFramework.includes('Vue2')) { -%>
     {
       path: "/vue2",
       name: "vue2",
@@ -57,7 +57,7 @@ const routes = [
       component: Vue2Sub,
     },
     <% } -%>
-    <% if (subFramework.includes('vue3')) { -%>
+    <% if (subFramework.includes('Vue3')) { -%>
     {
       path: "/vue3",
       name: "vue3",
@@ -69,7 +69,7 @@ const routes = [
       component: Vue3Sub,
     },
     <% } -%>
-    <% if (subFramework.includes('vite')) { -%>
+    <% if (subFramework.includes('Vite')) { -%>
     {
       path: "/vite",
       name: "vite",
@@ -81,7 +81,7 @@ const routes = [
       component: ViteSub,
     },
     <% } -%>
-    <% if (subFramework.includes('react16')) { -%>
+    <% if (subFramework.includes('React16')) { -%>
       {
         path: "/react16",
         name: "react16",
@@ -93,7 +93,7 @@ const routes = [
         component: React16Sub,
       },
     <% } -%>
-    <% if (subFramework.includes('react17')) { -%>
+    <% if (subFramework.includes('React17')) { -%>
       {
         path: "/react17",
         name: "react17",
@@ -105,7 +105,7 @@ const routes = [
         component: React17Sub,
       },
     <% } -%>
-    <% if (subFramework.includes('angular12')) { -%>
+    <% if (subFramework.includes('Angular12')) { -%>
       {
         path: "/angular12",
         name: "angular12",
@@ -117,8 +117,8 @@ const routes = [
 // 3. 创建路由实例并传递 `routes` 配置
 // 你可以在这里输入更多的配置，但我们在这里
 // 暂时保持简单
+// 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。
 const router = createRouter({
-  <!-- // 4. 内部提供了 history 模式的实现。为了简单起见，我们在这里使用 hash 模式。 -->
   <% if (mainRouter === 'hash') { -%>
     history: createWebHashHistory(),
   <% } -%>
