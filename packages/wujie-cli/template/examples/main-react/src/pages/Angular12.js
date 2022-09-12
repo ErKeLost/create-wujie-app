@@ -1,5 +1,5 @@
 import React from "react";
-import hostMap from "../hostMap.ejs";
+import hostMap from "../hostMap.js";
 import WujieReact from "wujie-react";
 import { useNavigate } from "react-router-dom";
 

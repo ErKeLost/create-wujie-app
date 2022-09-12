@@ -137,7 +137,7 @@ async function createWuJieProject() {
   console.log(gradient('#fff', '#f16b5f')('\n📦 Welcome To Create Template for WuJie! \n'))
   await createProjectQuestions()
   await renderTemplate()
-  // await install()
+  await install()
 }
 
 createWuJieProject()
