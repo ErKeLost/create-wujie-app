@@ -15,8 +15,7 @@ export default [
       },
       {
         title: '🚧 Webpack + React17',
-        value: 'main-react',
-        disabled: true
+        value: 'main-react'
       }
     ]
   },
