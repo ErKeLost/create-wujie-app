@@ -32,7 +32,9 @@ function renderTemplateFiles() {
     'examples/main-vite/src/views/Multiple.vue',
     'examples/main-vue/src/views/Multiple.vue',
     'examples/main-react/src/pages/All.js',
-    'examples/main-react/src/App.js'
+    'examples/main-react/src/App.js',
+    'examples/main-react/src/hostMap.js',
+    'examples/main-react/src/index.js'
   ]
 }
 

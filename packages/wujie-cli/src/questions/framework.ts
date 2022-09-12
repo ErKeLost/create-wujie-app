@@ -14,7 +14,7 @@ export default [
         value: 'main-vite'
       },
       {
-        title: '🚧 Webpack + React17',
+        title: '🆕 Webpack + React17',
         value: 'main-react'
       }
     ]
@@ -54,14 +54,12 @@ export default [
         value: 'Vue3'
       },
       {
-        title: '🚧 React16',
-        value: 'React16',
-        disabled: true
+        title: '🆕 React16',
+        value: 'React16'
       },
       {
-        title: '🚧 React17',
-        value: 'React17',
-        disabled: true
+        title: '🆕 React17',
+        value: 'React17'
       },
       {
         title: '🚧 React18',
