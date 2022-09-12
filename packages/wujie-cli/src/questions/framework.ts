@@ -55,20 +55,20 @@ export default [
       },
       {
         title: '🚧 React16',
-        value: 'react16',
+        value: 'React16',
         disabled: true
       },
       {
         title: '🚧 React17',
-        value: 'react17',
+        value: 'React17',
         disabled: true
       },
       {
         title: '🚧 React18',
-        value: 'react18',
+        value: 'React18',
         disabled: true
       },
-      { title: 'Angular12', value: 'angular12' }
+      { title: 'Angular12', value: 'Angular12' }
     ]
   },
   {

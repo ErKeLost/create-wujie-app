@@ -19,9 +19,12 @@ export default function React16() {
   };
   return (
     <div style={{ height: "100%", width: "100%" }}>
+      <% if (subFramework.includes('React16')) { -%>
       <div className="all-item">
         <WujieReact height="100%" width="100%" name="react16" url={react16Url} sync={true} props={props}></WujieReact>
       </div>
+      <% } -%>
+      <% if (subFramework.includes('React17')) { -%>
       <div className="all-item">
         <WujieReact
           height="100%"
@@ -33,9 +36,13 @@ export default function React16() {
           alive={true}
         ></WujieReact>
       </div>
+      <% } -%>
+      <% if (subFramework.includes('Vue2')) { -%>
       <div className="all-item">
         <WujieReact height="100%" width="100%" name="vue2" url={vue2Url} sync={true} props={props}></WujieReact>
       </div>
+      <% } -%>
+      <% if (subFramework.includes('Vue3')) { -%>
       <div className="all-item">
         <WujieReact
           height="100%"
@@ -47,9 +54,13 @@ export default function React16() {
           alive={true}
         ></WujieReact>
       </div>
+      <% } -%>
+      <% if (subFramework.includes('Vite')) { -%>
       <div className="all-item">
         <WujieReact height="100%" width="100%" name="vite" url={vite} sync={true} props={props}></WujieReact>
       </div>
+      <% } -%>
+      <% if (subFramework.includes('Angular12')) { -%>
       <div className="all-item">
         <WujieReact
           height="100%"
@@ -60,6 +71,7 @@ export default function React16() {
           props={props}
         ></WujieReact>
       </div>
+      <% } -%>
     </div>
   );
 }

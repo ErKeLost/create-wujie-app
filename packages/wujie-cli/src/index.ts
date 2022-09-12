@@ -84,11 +84,11 @@ async function renderTemplate() {
   await fs.copy(templatePath, options.dest)
   // 拷贝基础模板文件
 
-  console.log(mainFramework)
+  // console.log(mainFramework)
 
   const index = mainFramework.indexOf(options.mainFramework)
   mainFramework.splice(index, 1)
-  console.log(mainFramework)
+  // console.log(mainFramework)
 
   mainFramework.forEach(async (item) => {
     console.log(`${options.dest}/examples/${item}`)
@@ -106,24 +106,19 @@ async function renderTemplate() {
   })
   // 移除主应用view 文件 vue模式
   const removeSubFramework = getArrDiff(subFramework, options.subFramework)
+  console.log(subFramework)
+  console.log(options.subFramework)
   console.log(removeSubFramework)
 
   if (options.mainFramework.includes('main-react')) {
-    console.log('remove react file')
+    // console.log('remove react file')
     removeSubFramework.forEach(async (item) => {
-      await fs.remove(
-        `${options.dest}/examples/${options.mainFramework}/views/${item}.vue`
-      )
-      await fs.remove(
-        `${options.dest}/examples/${options.mainFramework}/views/${item}-sub.vue`
-      )
+      await fs.remove(`${options.dest}/examples/${options.mainFramework}/src/page/${item}.js`)
     })
   } else {
-    console.log('remove vue file')
+    // console.log('remove vue file')
     removeSubFramework.forEach(async (item) => {
-      await fs.remove(
-        `${options.dest}/examples/${options.mainFramework}/src/views/${item}.vue`
-      )
+      await fs.remove(`${options.dest}/examples/${options.mainFramework}/src/views/${item}.vue`)
       await fs.remove(
         `${options.dest}/examples/${options.mainFramework}/src/views/${item.toLowerCase()}-sub.vue`
       )

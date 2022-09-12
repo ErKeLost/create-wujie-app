@@ -5,7 +5,7 @@ import "antd/es/switch/style/css.js";
 import "antd/es/tooltip/style/css.js";
 import "antd/es/button/style/css.js";
 import "./index.css";
-import App from "./App";
+import App from "./App.ejs";
 import reportWebVitals from "./reportWebVitals";
 import hostMap from "./hostMap";
 import credentialsFetch from "./fetch";
