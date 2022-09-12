@@ -34,7 +34,9 @@ function renderTemplateFiles() {
     'examples/main-react/src/pages/All.js',
     'examples/main-react/src/App.js',
     'examples/main-react/src/hostMap.js',
-    'examples/main-react/src/index.js'
+    'examples/main-react/src/index.js',
+    'examples/react17/src/App.js',
+    'examples/react16/src/index.js'
   ]
 }
 
