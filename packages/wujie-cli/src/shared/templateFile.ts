@@ -28,7 +28,9 @@ function renderTemplateFiles() {
     ...mainFrameworkMap.get(options.mainFramework),
     'examples/vue2/src/main.js',
     'examples/vue3/src/router/index.js',
-    'examples/vite/src/main.ts'
+    'examples/vite/src/main.ts',
+    'examples/main-vite/src/views/Multiple.vue',
+    'examples/main-vue/src/views/Multiple.vue'
   ]
 }
 
