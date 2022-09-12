@@ -1,0 +1,52 @@
+<template>
+  <div style="height: 100%; width: 100%">
+    <% if (subFramework.includes('React16')) { -%>
+    <WujieVue class="item" name="react16" :url="react16Url" :sync="true"></WujieVue>
+    <% } -%> <% if (subFramework.includes('React17')) { -%>
+    <WujieVue class="item" name="react17" :url="react17Url" :sync="true"></WujieVue>
+
+    <% } -%> <% if (subFramework.includes('Vite')) { -%>
+    <WujieVue class="item" name="react16" :url="vite" :sync="true"></WujieVue>
+    <% } -%> <% if (subFramework.includes('Vue2')) { -%>
+    <WujieVue class="item" name="react16" :url="vue2Url" :sync="true"></WujieVue>
+    <% } -%> <% if (subFramework.includes('Vue3')) { -%>
+    <WujieVue class="item" name="react16" :url="vue3Url" :sync="true"></WujieVue>
+    <% } -%> <% if (subFramework.includes('Angular12')) { -%>
+    <WujieVue class="item" name="react16" :url="angular12Url" :sync="true"></WujieVue>
+    <% } -%
+  </div>
+</template>
+
+<script>
+  import hostMap from "../wujie-config/hostMap";
+
+  export default {
+    data() {
+      return {
+        react16Url: hostMap("//localhost:7600/"),
+        react17Url: hostMap("//localhost:7100/"),
+        vue2Url: hostMap("//localhost:8081/"),
+        vue3Url: hostMap("//localhost:8082/"),
+        vite: hostMap("//localhost:8083/"),
+        angular12Url: hostMap("//localhost:7400/"),
+      };
+    },
+    methods: {
+      jump(name) {
+        this.$router.push({ name });
+      },
+    },
+  };
+</script>
+
+<style scoped>
+  .item {
+    display: inline-block;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    width: 45%;
+    height: 45%;
+    margin: 20px;
+    overflow: scroll;
+  }
+</style>
