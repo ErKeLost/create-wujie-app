@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import logo from "./logo.svg";
+<% if (mainRouter === 'hash') { -%>
+import { HashRouter as Router, Switch, Route, NavLink, Redirect, useHistory, useLocation } from "react-router-dom";
+<% } -%>
+<% if (mainRouter === 'history') { -%>
 import { BrowserRouter as Router, Switch, Route, NavLink, Redirect, useHistory, useLocation } from "react-router-dom";
+<% } -%>
 import Dialog from "./Dialog";
 import Location from "./Location";
 import Communication from "./Communication";

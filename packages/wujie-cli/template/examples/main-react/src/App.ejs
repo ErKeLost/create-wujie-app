@@ -1,4 +1,10 @@
+<% if (mainRouter === 'hash') { -%>
 import { HashRouter as Router, Route, Routes, NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
+<% } -%>
+<% if (mainRouter === 'history') { -%>
+import { BrowserRouter as Router, Route, Routes, NavLink, Navigate, useLocation, useNavigate } from "react-router-dom";
+<% } -%>
+
 import WujieReact from "wujie-react";
 import React, { useState } from "react";
 import Home from "./pages/Home";

@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+<% if (mainRouter === 'hash') { -%>
+import { HashRouter as Router } from "react-router-dom";
+<% } -%>
+<% if (mainRouter === 'history') { -%>
+import { BrowserRouter as Router } from "react-router-dom";
+<% } -%>
 import "./styles.css";
 
 const basename = process.env.NODE_ENV === "production" ? "/demo-react16/" : "";
@@ -10,9 +15,9 @@ if (window.__POWERED_BY_WUJIE__) {
   // eslint-disable-next-line no-undef
   window.__WUJIE_MOUNT = () => {
     ReactDOM.render(
-      <BrowserRouter basename={basename}>
+      <Router basename={basename}>
         <App />
-      </BrowserRouter>,
+      </Router>,
       document.getElementById("root")
     );
   };
@@ -21,9 +26,9 @@ if (window.__POWERED_BY_WUJIE__) {
   };
 } else {
   ReactDOM.render(
-    <BrowserRouter basename={basename}>
+    <Router basename={basename}>
       <App />
-    </BrowserRouter>,
+    </Router>,
     document.getElementById("root")
   );
 }
