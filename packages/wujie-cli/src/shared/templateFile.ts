@@ -11,7 +11,8 @@ function renderTemplateFiles() {
       [
         `${MAIN_PREFIX_VUE}/main.js`,
         `${MAIN_PREFIX_VUE}/App.vue`,
-        `${MAIN_PREFIX_VUE}/router/index.js`
+        `${MAIN_PREFIX_VUE}/router/index.js`,
+        `${MAIN_PREFIX_VUE}/views/Multiple.vue`
       ]
     ],
     [
@@ -19,27 +20,32 @@ function renderTemplateFiles() {
       [
         `${MAIN_PREFIX_VITE}/main.ts`,
         `${MAIN_PREFIX_VITE}/App.vue`,
-        `${MAIN_PREFIX_VITE}/router/index.ts`
+        `${MAIN_PREFIX_VITE}/router/index.ts`,
+        `${MAIN_PREFIX_VUE}/views/Multiple.vue`
       ]
     ],
-    ['main-react', []]
+    [
+      'main-react',
+      [
+        'examples/main-react/src/pages/All.js',
+        'examples/main-react/src/App.js',
+        'examples/main-react/src/hostMap.js',
+        'examples/main-react/src/index.js'
+      ]
+    ]
   ])
-  return [
-    ...mainFrameworkMap.get(options.mainFramework),
-    'examples/vue2/src/main.js',
-    'examples/vue3/src/router/index.js',
-    'examples/vite/src/main.ts',
-    'examples/main-vite/src/views/Multiple.vue',
-    'examples/main-vue/src/views/Multiple.vue',
-    'examples/main-react/src/pages/All.js',
-    'examples/main-react/src/App.js',
-    'examples/main-react/src/hostMap.js',
-    'examples/main-react/src/index.js',
-    'examples/react17/src/App.js',
-    'examples/react16/src/index.js'
-  ]
+  const resolveSubFrameworkFiles = new Map([
+    ['Vite', ['examples/vite/src/main.ts']],
+    ['Vue2', ['examples/vue2/src/main.js']],
+    ['Vue3', ['examples/vue3/src/router/index.js']],
+    ['React16', ['examples/react16/src/index.js']],
+    ['React17', ['examples/react17/src/App.js']]
+  ])
+  const res = options.subFramework.map((item) => {
+    return resolveSubFrameworkFiles.get(item)
+  })
+  return [...mainFrameworkMap.get(options.mainFramework), ...res.flat()]
 }
-
 const mainFramework = ['main-vue', 'main-react', 'main-vite']
 const subFramework = ['Vue2', 'Vue3', 'Vite', 'Angular12', 'React16', 'React17', 'React18']
 export { renderTemplateFiles, mainFramework, subFramework }
