@@ -92,13 +92,16 @@ async function renderTemplate() {
   })
   // console.log(mainFramework)
   const obj = {}
-  options.subFramework.forEach((item) => (obj[`${item}`] = true)) // 将需要对比的数组的值作为 obj的key
+  options.subFramework.forEach((item) => (obj[item] = true)) // 将需要对比的数组的值作为 obj的key
   const subItems = subFramework.map((item) => {
     if (!obj[item]) {
       return item.toLowerCase()
     }
   }) // 这里是对比出来不同的元素
-  subItems.forEach(async (item) => {
+  // 移除undefined
+  const removeSubItems = subItems.filter((item) => item !== undefined)
+  console.log(removeSubItems)
+  removeSubItems.forEach(async (item) => {
     await fs.remove(`${options.dest}/examples/${item}`)
   })
   // 移除主应用view 文件 vue模式
@@ -121,6 +124,8 @@ async function renderTemplate() {
   console.log(options)
 
   // 编译 ejs 模板文件
+  console.log(renderTemplateFiles())
+
   await Promise.all(renderTemplateFiles().map((file) => ejsRender(file, options.name)))
 }
 

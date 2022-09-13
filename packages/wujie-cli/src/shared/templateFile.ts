@@ -44,7 +44,10 @@ function renderTemplateFiles() {
   const res = options.subFramework.map((item) => {
     return resolveSubFrameworkFiles.get(item)
   })
-  return [...mainFrameworkMap.get(options.mainFramework), ...res.flat()]
+  return [
+    ...mainFrameworkMap.get(options.mainFramework),
+    ...res.flat().filter((item) => item !== undefined)
+  ]
 }
 const mainFramework = ['main-vue', 'main-react', 'main-vite']
 const subFramework = ['Vue2', 'Vue3', 'Vite', 'Angular12', 'React16', 'React17', 'React18']
